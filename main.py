@@ -106,8 +106,7 @@ def homepage(request: Request):
     leads = _load_leads()
     total_vc_raw = sum(l.get("amount_usd") or 0 for l in leads)
     industries = len({l.get("industry") for l in leads if l.get("industry")})
-    return templates.TemplateResponse("index.html", {
-        "request": request,
+    return templates.TemplateResponse(request, "index.html", {
         "leads_json": json.dumps(leads),
         "total": len(leads),
         "total_vc": _fmt_usd(total_vc_raw) if total_vc_raw else "$0",
