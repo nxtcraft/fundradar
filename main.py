@@ -1,6 +1,5 @@
 """
 Startup Funding & B2B Lead Intelligence API
-FastAPI microservice serving normalized startup funding data.
 """
 
 import json
@@ -8,7 +7,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Response
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 DATA_FILE = Path("data/latest_funding.json")
@@ -17,10 +17,19 @@ app = FastAPI(
     title="Startup Funding & B2B Lead Intelligence API",
     description=(
         "Track newly funded startups with normalized round sizes, stages, "
-        "tech categories, and founder websites. Ideal for B2B sales teams, "
-        "recruiters, and venture intelligence workflows."
+        "tech categories, and websites. Updated daily. Ideal for B2B sales "
+        "teams, recruiters, and venture intelligence workflows."
     ),
-    version="1.0.0",
+    version="1.1.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["GET"],
+    allow_headers=["*"],
 )
 
 
@@ -43,15 +52,23 @@ class FundingLead(BaseModel):
 class HealthResponse(BaseModel):
     status: str
     total_companies: int
-    data_file: str
+    last_ingested: Optional[str]
     timestamp: str
 
 
 class StatsResponse(BaseModel):
     total_vc_tracked_usd: int
+    total_vc_tracked_formatted: str
     by_industry: dict[str, int]
     by_round_type: dict[str, int]
     total_companies: int
+
+
+class LeadsResponse(BaseModel):
+    total: int
+    offset: int
+    limit: int
+    results: list[FundingLead]
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -67,6 +84,16 @@ def _load_leads() -> list[dict]:
         return []
 
 
+def _fmt_usd(amount: int) -> str:
+    if amount >= 1_000_000_000:
+        return f"${amount / 1_000_000_000:.1f}B"
+    if amount >= 1_000_000:
+        return f"${amount / 1_000_000:.0f}M"
+    if amount >= 1_000:
+        return f"${amount / 1_000:.0f}K"
+    return f"${amount}"
+
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Routes
 # ──────────────────────────────────────────────────────────────────────────────
@@ -74,37 +101,61 @@ def _load_leads() -> list[dict]:
 @app.get("/health", response_model=HealthResponse, tags=["Meta"])
 def health():
     leads = _load_leads()
+    last_ingested = leads[0].get("ingested_at") if leads else None
     return {
         "status": "ok",
         "total_companies": len(leads),
-        "data_file": str(DATA_FILE),
+        "last_ingested": last_ingested,
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
 
-@app.get("/v1/leads", response_model=list[FundingLead], tags=["Leads"])
+@app.get("/v1/leads", response_model=LeadsResponse, tags=["Leads"])
 def list_leads(
-    stage: Optional[str] = Query(None, description="Filter by round type (e.g. Seed, Series A)"),
-    industry: Optional[str] = Query(None, description="Filter by industry (e.g. AI/ML, Fintech)"),
-    min_funding_usd: Optional[int] = Query(None, description="Minimum funding amount in USD"),
-    limit: int = Query(25, ge=1, le=100, description="Max results to return (1–100)"),
+    response: Response,
+    stage: Optional[str] = Query(None, description="Filter by round type (Seed, Series A, Series B, Series C, Growth)"),
+    industry: Optional[str] = Query(None, description="Filter by industry (AI/ML, Fintech, DevTools, HealthTech, B2B SaaS, Security, CleanTech, EdTech, HR Tech, E-commerce)"),
+    min_funding_usd: Optional[int] = Query(None, description="Minimum funding in USD (e.g. 1000000)"),
+    max_funding_usd: Optional[int] = Query(None, description="Maximum funding in USD"),
+    search: Optional[str] = Query(None, description="Free-text search across company name and summary"),
+    offset: int = Query(0, ge=0, description="Pagination offset"),
+    limit: int = Query(25, ge=1, le=100, description="Results per page (max 100)"),
 ):
     leads = _load_leads()
     if not leads:
         raise HTTPException(status_code=503, detail="No funding data available. Run pipeline.py to ingest.")
 
-    # Apply filters
     if stage:
         leads = [l for l in leads if l.get("round_type", "").lower() == stage.lower()]
     if industry:
         leads = [l for l in leads if industry.lower() in l.get("industry", "").lower()]
     if min_funding_usd is not None:
         leads = [l for l in leads if (l.get("amount_usd") or 0) >= min_funding_usd]
+    if max_funding_usd is not None:
+        leads = [l for l in leads if (l.get("amount_usd") or 0) <= max_funding_usd]
+    if search:
+        q = search.lower()
+        leads = [
+            l for l in leads
+            if q in l.get("company_name", "").lower() or q in l.get("summary", "").lower()
+        ]
 
-    # Sort by announced_date descending (already sorted in pipeline, but enforce here)
     leads.sort(key=lambda x: x.get("announced_date", ""), reverse=True)
 
-    return leads[:limit]
+    total = len(leads)
+    page = leads[offset: offset + limit]
+
+    response.headers["X-Total-Count"] = str(total)
+    return {"total": total, "offset": offset, "limit": limit, "results": page}
+
+
+@app.get("/v1/company/{company_id}", response_model=FundingLead, tags=["Leads"])
+def get_company(company_id: str):
+    leads = _load_leads()
+    for lead in leads:
+        if lead.get("id") == company_id:
+            return lead
+    raise HTTPException(status_code=404, detail=f"Company '{company_id}' not found.")
 
 
 @app.get("/v1/stats", response_model=StatsResponse, tags=["Analytics"])
@@ -117,17 +168,18 @@ def stats():
 
     by_industry: dict[str, int] = {}
     for l in leads:
-        ind = l.get("industry", "Other")
-        by_industry[ind] = by_industry.get(ind, 0) + 1
+        k = l.get("industry", "Other")
+        by_industry[k] = by_industry.get(k, 0) + 1
 
     by_round: dict[str, int] = {}
     for l in leads:
-        rt = l.get("round_type", "Unknown")
-        by_round[rt] = by_round.get(rt, 0) + 1
+        k = l.get("round_type", "Unknown")
+        by_round[k] = by_round.get(k, 0) + 1
 
     return {
         "total_vc_tracked_usd": total_vc,
-        "by_industry": by_industry,
-        "by_round_type": by_round,
+        "total_vc_tracked_formatted": _fmt_usd(total_vc),
+        "by_industry": dict(sorted(by_industry.items(), key=lambda x: -x[1])),
+        "by_round_type": dict(sorted(by_round.items(), key=lambda x: -x[1])),
         "total_companies": len(leads),
     }
