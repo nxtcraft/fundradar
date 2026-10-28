@@ -101,17 +101,72 @@ def _fmt_usd(amount: int) -> str:
 # Routes
 # ──────────────────────────────────────────────────────────────────────────────
 
+_IND_CLASS = {
+    "AI/ML": "ind-aiml", "Fintech": "ind-fintech", "DevTools": "ind-devtools",
+    "HealthTech": "ind-health", "B2B SaaS": "ind-saas", "Security": "ind-security",
+    "CleanTech": "ind-clean", "EdTech": "ind-edtech", "HR Tech": "ind-hr",
+    "E-commerce": "ind-ecomm",
+}
+_STAGE_CLASS = {
+    "Pre-Seed": "stage-preseed", "Seed": "stage-seed", "Series A": "stage-seriesa",
+    "Series B": "stage-seriesb", "Series C": "stage-seriesc", "Series D": "stage-seriesd",
+    "Growth": "stage-growth",
+}
+
+
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 def homepage(request: Request):
     leads = _load_leads()
     total_vc_raw = sum(l.get("amount_usd") or 0 for l in leads)
     industries = len({l.get("industry") for l in leads if l.get("industry")})
+
+    enriched = []
+    for l in leads:
+        amt = l.get("amount_usd")
+        raw_date = l.get("announced_date", "")
+        try:
+            from datetime import date
+            d = date.fromisoformat(raw_date)
+            date_fmt = d.strftime("%b %Y")
+        except Exception:
+            date_fmt = raw_date
+        enriched.append({
+            **l,
+            "amount_fmt": _fmt_usd(amt) if amt else None,
+            "ind_cls": _IND_CLASS.get(l.get("industry", ""), "ind-other"),
+            "stage_cls": _STAGE_CLASS.get(l.get("round_type", ""), "stage-seed"),
+            "date_fmt": date_fmt,
+        })
+
     return templates.TemplateResponse(request, "index.html", {
-        "leads_json": json.dumps(leads),
+        "leads": enriched,
         "total": len(leads),
         "total_vc": _fmt_usd(total_vc_raw) if total_vc_raw else "$0",
         "industries": industries,
     })
+
+
+@app.get("/robots.txt", include_in_schema=False)
+def robots():
+    return Response(
+        content="User-agent: *\nAllow: /\nSitemap: https://fundradar-xx7t.onrender.com/sitemap.xml\n",
+        media_type="text/plain",
+    )
+
+
+@app.get("/sitemap.xml", include_in_schema=False)
+def sitemap():
+    leads = _load_leads()
+    urls = ["https://fundradar-xx7t.onrender.com/"]
+    for lead in leads:
+        if lead.get("website"):
+            pass  # external sites not included
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    for url in urls:
+        xml += f"  <url><loc>{url}</loc><changefreq>daily</changefreq><priority>1.0</priority></url>\n"
+    xml += "</urlset>"
+    return Response(content=xml, media_type="application/xml")
 
 
 @app.get("/health", response_model=HealthResponse, tags=["Meta"])

@@ -3,13 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FundRadar — Startup Funding & B2B Lead Intelligence</title>
-  <meta name="description" content="Track newly funded startups in real-time. Filter by stage, industry, and funding size. Free API for B2B sales teams, recruiters, and venture analysts." />
-  <meta name="keywords" content="startup funding, B2B leads, venture capital, Series A, seed funding, funded startups, startup intelligence, funding rounds" />
-  <meta property="og:title" content="FundRadar — Startup Funding Intelligence API" />
-  <meta property="og:description" content="Track {{ total }} newly funded startups updated daily. Filter by stage, industry, funding size." />
+  <title>FundRadar — Track Newly Funded Startups | B2B Lead Intelligence</title>
+  <meta name="description" content="Track {{ total }} newly funded startups in real-time. Filter by funding stage (Seed, Series A, Series B), industry, and amount. Free API for B2B sales teams, recruiters, and venture analysts. Updated daily." />
+  <meta name="keywords" content="startup funding, funded startups 2024, funded startups 2025, B2B leads, venture capital tracker, Series A companies, seed funding, startup intelligence, funding rounds API, newly funded companies" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://fundradar-xx7t.onrender.com/" />
+  <meta property="og:title" content="FundRadar — Track {{ total }} Newly Funded Startups" />
+  <meta property="og:description" content="Real-time startup funding intelligence. {{ total }} companies, {{ total_vc }} VC tracked across 10 industries. Updated daily." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fundradar-xx7t.onrender.com/" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FundRadar — Startup Funding Intelligence" />
+  <meta name="twitter:description" content="Track {{ total }} newly funded startups. Filter by stage, industry, funding size. Free API." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FundRadar",
+    "description": "Startup Funding & B2B Lead Intelligence — track newly funded companies updated daily",
+    "url": "https://fundradar-xx7t.onrender.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://fundradar-xx7t.onrender.com/?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
@@ -283,7 +302,39 @@
   <span class="results-count" id="resultsCount"></span>
 </div>
 
-<div class="grid" id="grid"></div>
+<!-- Server-rendered for SEO — JS filters hide/show these cards -->
+<div class="grid" id="grid">
+{% for lead in leads %}
+  <article class="card"
+    data-stage="{{ lead.round_type }}"
+    data-industry="{{ lead.industry }}"
+    data-search="{{ lead.company_name | lower }} {{ lead.summary | lower }} {{ lead.industry | lower }}">
+    <div class="card-top">
+      <div>
+        <h2 class="company-name">{{ lead.company_name }}</h2>
+        {% if lead.website %}
+        <a class="company-website" href="{{ lead.website }}" target="_blank" rel="noopener">
+          {{ lead.website | replace("https://","") | replace("http://","") | replace("/","") }}
+        </a>
+        {% endif %}
+      </div>
+      {% if lead.amount_usd %}
+        <div class="amount-badge">{{ lead.amount_fmt }}</div>
+      {% else %}
+        <div class="amount-undisclosed">Undisclosed</div>
+      {% endif %}
+    </div>
+    <p class="summary">{{ lead.summary }}</p>
+    <div class="card-footer">
+      <span class="tag tag-stage {{ lead.stage_cls }}">{{ lead.round_type }}</span>
+      <span class="tag {{ lead.ind_cls }}">{{ lead.industry }}</span>
+      {% if lead.announced_date %}
+        <span class="date">{{ lead.date_fmt }}</span>
+      {% endif %}
+    </div>
+  </article>
+{% endfor %}
+</div>
 
 <footer>
   <p>
@@ -295,97 +346,45 @@
 </footer>
 
 <script>
-  const LEADS = {{ leads_json | safe }};
-
-  const IND_CLASS = {
-    'AI/ML':      'ind-aiml',
-    'Fintech':    'ind-fintech',
-    'DevTools':   'ind-devtools',
-    'HealthTech': 'ind-health',
-    'B2B SaaS':   'ind-saas',
-    'Security':   'ind-security',
-    'CleanTech':  'ind-clean',
-    'EdTech':     'ind-edtech',
-    'HR Tech':    'ind-hr',
-    'E-commerce': 'ind-ecomm',
-  };
-
-  const STAGE_CLASS = {
-    'Pre-Seed': 'stage-preseed',
-    'Seed':     'stage-seed',
-    'Series A': 'stage-seriesa',
-    'Series B': 'stage-seriesb',
-    'Series C': 'stage-seriesc',
-    'Series D': 'stage-seriesd',
-    'Growth':   'stage-growth',
-  };
-
-  function fmtUSD(n) {
-    if (!n) return null;
-    if (n >= 1e9) return '$' + (n/1e9).toFixed(1) + 'B';
-    if (n >= 1e6) return '$' + Math.round(n/1e6) + 'M';
-    if (n >= 1e3) return '$' + Math.round(n/1e3) + 'K';
-    return '$' + n;
-  }
-
-  function renderCard(l) {
-    const amt = l.amount_usd ? fmtUSD(l.amount_usd) : null;
-    const domain = l.website ? l.website.replace(/^https?:\/\//, '').replace(/\/$/, '') : '';
-    const indCls = IND_CLASS[l.industry] || 'ind-other';
-    const stageCls = STAGE_CLASS[l.round_type] || 'stage-seed';
-    const date = l.announced_date ? new Date(l.announced_date).toLocaleDateString('en-US', {month:'short', year:'numeric'}) : '';
-
-    return `
-      <article class="card">
-        <div class="card-top">
-          <div>
-            <div class="company-name">${escHtml(l.company_name)}</div>
-            ${domain ? `<a class="company-website" href="${escAttr(l.website)}" target="_blank" rel="noopener">${escHtml(domain)}</a>` : ''}
-          </div>
-          ${amt ? `<div class="amount-badge">${escHtml(amt)}</div>` : '<div class="amount-undisclosed">Undisclosed</div>'}
-        </div>
-        <p class="summary">${escHtml(l.summary)}</p>
-        <div class="card-footer">
-          <span class="tag tag-stage ${stageCls}">${escHtml(l.round_type)}</span>
-          <span class="tag ${indCls}">${escHtml(l.industry)}</span>
-          ${date ? `<span class="date">${date}</span>` : ''}
-        </div>
-      </article>`;
-  }
-
-  function escHtml(s) {
-    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-  function escAttr(s) {
-    return String(s||'').replace(/"/g,'&quot;');
-  }
+  // Filter/search operates on server-rendered DOM cards — Google indexes the real HTML
+  const cards = Array.from(document.querySelectorAll('#grid .card'));
 
   function applyFilters() {
-    const q = document.getElementById('search').value.toLowerCase().trim();
+    const q     = document.getElementById('search').value.toLowerCase().trim();
     const stage = document.getElementById('stageFilter').value;
-    const industry = document.getElementById('industryFilter').value;
+    const ind   = document.getElementById('industryFilter').value;
 
-    const filtered = LEADS.filter(l => {
-      if (stage && l.round_type !== stage) return false;
-      if (industry && l.industry !== industry) return false;
-      if (q) {
-        const haystack = (l.company_name + ' ' + l.summary + ' ' + l.industry).toLowerCase();
-        if (!haystack.includes(q)) return false;
-      }
-      return true;
+    let visible = 0;
+    cards.forEach(card => {
+      const matchStage = !stage || card.dataset.stage === stage;
+      const matchInd   = !ind   || card.dataset.industry === ind;
+      const matchQ     = !q     || (card.dataset.search || '').includes(q);
+      const show = matchStage && matchInd && matchQ;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
 
-    const grid = document.getElementById('grid');
-    document.getElementById('resultsCount').textContent = `${filtered.length} result${filtered.length !== 1 ? 's' : ''}`;
+    document.getElementById('resultsCount').textContent =
+      `${visible} result${visible !== 1 ? 's' : ''}`;
 
-    if (filtered.length === 0) {
-      grid.innerHTML = `<div class="empty"><div class="empty-icon">🔍</div><p>No companies match your filters.</p></div>`;
-    } else {
-      grid.innerHTML = filtered.map(renderCard).join('');
+    // Show empty state if nothing matches
+    let empty = document.getElementById('emptyState');
+    if (visible === 0) {
+      if (!empty) {
+        empty = document.createElement('div');
+        empty.id = 'emptyState';
+        empty.className = 'empty';
+        empty.innerHTML = '<div class="empty-icon">🔍</div><p>No companies match your filters.</p>';
+        document.getElementById('grid').appendChild(empty);
+      }
+      empty.style.display = '';
+    } else if (empty) {
+      empty.style.display = 'none';
     }
   }
 
-  applyFilters();
+  // Show count on load
+  document.getElementById('resultsCount').textContent = `${cards.length} results`;
 </script>
 
 </body>
