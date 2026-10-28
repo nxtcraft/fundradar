@@ -7,11 +7,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException, Query, Response
+from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 
 DATA_FILE = Path("data/latest_funding.json")
+templates = Jinja2Templates(directory="templates")
 
 app = FastAPI(
     title="Startup Funding & B2B Lead Intelligence API",
@@ -97,6 +100,20 @@ def _fmt_usd(amount: int) -> str:
 # ──────────────────────────────────────────────────────────────────────────────
 # Routes
 # ──────────────────────────────────────────────────────────────────────────────
+
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+def homepage(request: Request):
+    leads = _load_leads()
+    total_vc_raw = sum(l.get("amount_usd") or 0 for l in leads)
+    industries = len({l.get("industry") for l in leads if l.get("industry")})
+    return templates.TemplateResponse("index.html", {
+        "request": request,
+        "leads_json": json.dumps(leads),
+        "total": len(leads),
+        "total_vc": _fmt_usd(total_vc_raw) if total_vc_raw else "$0",
+        "industries": industries,
+    })
+
 
 @app.get("/health", response_model=HealthResponse, tags=["Meta"])
 def health():
