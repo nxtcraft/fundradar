@@ -295,7 +295,7 @@
 </footer>
 
 <script>
-  const LEADS = {{ leads_json }};
+  const LEADS = {{ leads_json | safe }};
 
   const IND_CLASS = {
     'AI/ML':      'ind-aiml',
