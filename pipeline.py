@@ -1,12 +1,13 @@
 """
 Startup Funding & Lead Intelligence ingestion pipeline.
 
-Sources (in priority order):
-  1. YC W25 + S24 company API
-  2. Hacker News "Show HN / We raised" posts
-  3. Curated seed dataset (50 real 2023-2025 rounds)
+Sources (commercially safe — all public domain / government data):
+  1. SEC EDGAR full-text search API — 8-K filings mentioning funding rounds
+     https://efts.sec.gov  (US government data, public domain, no restrictions)
+  2. SEC EDGAR S-1 RSS feed — recent IPO / pre-IPO filings
+  3. Curated seed dataset — 38 verified 2022-2025 rounds from public press releases
 
-Output: data/latest_funding.json
+Removed: YC API (grey area for commercial resale), HN scraping (ToS ambiguous)
 """
 
 import asyncio
@@ -139,112 +140,125 @@ SEED_DATA: list[dict] = [
 ]
 
 
-YC_BATCH_URLS = [
-    "https://api.ycombinator.com/v0.1/companies?batch=W25&limit=50",
-    "https://api.ycombinator.com/v0.1/companies?batch=S24&limit=50",
-]
-HN_NEW_STORIES_URL = "https://hacker-news.firebaseio.com/v0/newstories.json"
-HN_ITEM_URL = "https://hacker-news.firebaseio.com/v0/item/{id}.json"
+# ──────────────────────────────────────────────────────────────────────────────
+# SEC EDGAR — US government data, fully public domain, commercial use OK
+# ──────────────────────────────────────────────────────────────────────────────
 
-_FUNDING_PATTERN = re.compile(
-    r"(?:raised?|secured?|closed?)\s+([$€£][\d,.]+[KMBkmb]?)", re.IGNORECASE
+# 8-K filings often announce private funding rounds ("entered into a securities
+# purchase agreement", "closed a private placement", etc.)
+SEC_8K_SEARCH = (
+    "https://efts.sec.gov/LATEST/search-index?q=%22private+placement%22+"
+    "%22million%22&forms=8-K&dateRange=custom&startdt={start}&enddt={end}&hits.hits._source=period_of_report,display_names,file_date,form_type"
 )
+# S-1 RSS feed = companies filing to go public (pre-IPO)
+SEC_S1_RSS = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=S-1&dateb=&owner=include&count=20&search_text=&output=atom"
+
+_AMOUNT_IN_TEXT = re.compile(r"\$([\d,.]+)\s*(million|billion|thousand)", re.IGNORECASE)
+_MULTIPLIER_WORDS = {"thousand": 1_000, "million": 1_000_000, "billion": 1_000_000_000}
 
 
-async def fetch_yc_batch(client: httpx.AsyncClient, url: str) -> list[dict]:
+def _parse_sec_amount(text: str) -> Optional[int]:
+    m = _AMOUNT_IN_TEXT.search(text)
+    if not m:
+        return None
     try:
-        resp = await client.get(url, timeout=15)
+        num = float(m.group(1).replace(",", ""))
+        mult = _MULTIPLIER_WORDS.get(m.group(2).lower(), 1)
+        return int(num * mult)
+    except ValueError:
+        return None
+
+
+async def fetch_sec_8k_filings(client: httpx.AsyncClient) -> list[dict]:
+    """Fetch recent 8-K filings mentioning private placements from SEC EDGAR."""
+    from datetime import date, timedelta
+    end = date.today().isoformat()
+    start = (date.today() - timedelta(days=90)).isoformat()
+    url = SEC_8K_SEARCH.format(start=start, end=end)
+    try:
+        resp = await client.get(url, timeout=20, headers={"User-Agent": "FundRadar research@fundradar.com"})
         resp.raise_for_status()
-        companies = resp.json().get("companies", [])
-    except Exception:
+        data = resp.json()
+        hits = data.get("hits", {}).get("hits", [])
+    except Exception as e:
+        print(f"[sec-8k] fetch failed: {e}")
         return []
 
-    now = datetime.now(timezone.utc).date().isoformat()
     results = []
-    for c in companies[:40]:
-        name = (c.get("name") or "").strip()
-        if not name:
+    now = date.today().isoformat()
+    for hit in hits[:30]:
+        src = hit.get("_source", {})
+        names = src.get("display_names", "")
+        if not names:
             continue
-        description = c.get("one_liner") or c.get("long_description") or ""
-        slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
-        batch = (c.get("batch") or "").lower().replace(" ", "")
+        names_str = names if isinstance(names, str) else (names[0] if names else "")
+        if not names_str:
+            continue
+        company_name = names_str.split("(")[0].strip()[:80]
+        filed = src.get("file_date", now)[:10]
+        slug = re.sub(r"[^a-z0-9]+", "-", company_name.lower()).strip("-")
         results.append({
-            "id": f"yc-{batch}-{slug}",
-            "company_name": name,
-            "website": c.get("website") or c.get("url") or "",
-            "round_type": "Seed",
-            "amount_usd": 500_000,
-            "industry": classify_industry(description),
-            "summary": (description[:200] if description else f"{name} — YC {c.get('batch', '')} company."),
-            "announced_date": now,
+            "id": f"sec-8k-{slug}-{filed.replace('-','')}",
+            "company_name": company_name,
+            "website": "",
+            "round_type": "Growth",
+            "amount_usd": None,
+            "industry": "Other",
+            "summary": f"{company_name} filed an 8-K with the SEC disclosing a private placement or securities transaction.",
+            "announced_date": filed,
         })
     return results
 
 
-async def fetch_hn_funding_posts(client: httpx.AsyncClient, max_items: int = 25) -> list[dict]:
+async def fetch_sec_s1_filings(client: httpx.AsyncClient) -> list[dict]:
+    """Fetch recent S-1 IPO filings from SEC EDGAR RSS (Atom feed)."""
     try:
-        resp = await client.get(HN_NEW_STORIES_URL, timeout=10)
-        story_ids = resp.json()[:300]
-    except Exception:
+        resp = await client.get(
+            SEC_S1_RSS, timeout=20,
+            headers={"User-Agent": "FundRadar research@fundradar.com", "Accept": "application/atom+xml"},
+        )
+        resp.raise_for_status()
+        text = resp.text
+    except Exception as e:
+        print(f"[sec-s1] fetch failed: {e}")
         return []
 
-    tasks = [client.get(HN_ITEM_URL.format(id=sid), timeout=8) for sid in story_ids]
-    responses = await asyncio.gather(*tasks, return_exceptions=True)
-
     results = []
-    for r in responses:
-        if isinstance(r, Exception):
+    entries = re.findall(r"<entry>(.*?)</entry>", text, re.DOTALL)
+    for entry in entries[:20]:
+        title_m = re.search(r"<company-name>(.*?)</company-name>", entry)
+        date_m = re.search(r"<filing-date>(.*?)</filing-date>", entry)
+        link_m = re.search(r'<filing-href>(.*?)</filing-href>', entry)
+        if not title_m:
+            title_m = re.search(r"<title>(.*?)</title>", entry)
+        if not title_m:
             continue
-        try:
-            item = r.json()
-        except Exception:
-            continue
-        if not item or item.get("type") != "story":
-            continue
-        title = item.get("title", "")
-        text = item.get("text", "") or ""
-        url = item.get("url", "")
-        combined = f"{title} {text}"
-        if not title.lower().startswith("show hn"):
-            continue
-        m = _FUNDING_PATTERN.search(combined)
-        if not m:
-            continue
-        amount_usd = parse_funding_amount(m.group(1))
-        name = re.sub(r"^show hn:\s*", "", title, flags=re.IGNORECASE)
-        name = re.split(r"[–—\-–]", name)[0].strip()[:80]
-        slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
-        ts = item.get("time", 0)
-        announced = (
-            datetime.fromtimestamp(ts, tz=timezone.utc).date().isoformat()
-            if ts else datetime.now(timezone.utc).date().isoformat()
-        )
+        company_name = re.sub(r"<[^>]+>", "", title_m.group(1)).strip()[:80]
+        filed = (date_m.group(1).strip() if date_m else "")[:10]
+        link = link_m.group(1).strip() if link_m else ""
+        slug = re.sub(r"[^a-z0-9]+", "-", company_name.lower()).strip("-")
         results.append({
-            "id": f"hn-{slug}-{item.get('id', '')}",
-            "company_name": name,
-            "website": url,
-            "round_type": classify_round(combined, amount_usd),
-            "amount_usd": amount_usd,
-            "industry": classify_industry(combined),
-            "summary": title[:200],
-            "announced_date": announced,
+            "id": f"sec-s1-{slug}-{filed.replace('-','')}",
+            "company_name": company_name,
+            "website": link,
+            "round_type": "Growth",
+            "amount_usd": None,
+            "industry": classify_industry(company_name),
+            "summary": f"{company_name} filed an S-1 registration statement with the SEC, indicating intent to go public.",
+            "announced_date": filed or datetime.now(timezone.utc).date().isoformat(),
         })
-        if len(results) >= max_items:
-            break
     return results
 
 
 async def run_pipeline() -> list[dict]:
     now_utc = datetime.now(timezone.utc).isoformat()
     async with httpx.AsyncClient(follow_redirects=True) as client:
-        batches = await asyncio.gather(
-            *[fetch_yc_batch(client, url) for url in YC_BATCH_URLS],
-            fetch_hn_funding_posts(client),
+        sec_8k, sec_s1 = await asyncio.gather(
+            fetch_sec_8k_filings(client),
+            fetch_sec_s1_filings(client),
         )
 
-    live: list[dict] = []
-    for batch in batches:
-        live.extend(batch)
+    live = sec_8k + sec_s1
 
     seen: set[str] = set()
     merged: list[dict] = []
