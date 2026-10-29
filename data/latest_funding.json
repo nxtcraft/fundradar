@@ -7,8 +7,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Red Barn Robotics \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-mentra",
@@ -18,8 +18,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Mentra \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-blindpay",
@@ -29,8 +29,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "BlindPay \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-vantel",
@@ -40,19 +40,19 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Vantel \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-artil",
     "company_name": "Artil",
-    "website": "https://artil.ai/",
+    "website": "https://artil.ai/connect",
     "round_type": "Seed",
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Artil \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-assistant-ui",
@@ -62,8 +62,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "assistant-ui \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-artifact",
@@ -73,8 +73,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Artifact \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-axal",
@@ -84,8 +84,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Axal \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-thirdlayer",
@@ -95,8 +95,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Thirdlayer \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-trainloop",
@@ -106,8 +106,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "TrainLoop \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-sammy-labs",
@@ -117,8 +117,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "SAMMY Labs \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-instinct-space",
@@ -128,8 +128,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Instinct Space \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-mercura",
@@ -139,8 +139,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Mercura \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-codevisor",
@@ -150,8 +150,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Codevisor \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-cedar",
@@ -161,8 +161,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Cedar \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-browser-use",
@@ -172,8 +172,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Browser Use \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-tamlabs",
@@ -183,8 +183,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "TamLabs \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-ergo",
@@ -194,8 +194,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Ergo \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-copycat-ai",
@@ -205,8 +205,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "CopyCat AI \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-w25-paratus-health",
@@ -216,8 +216,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Paratus Health \u2014 YC W25 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-outerport",
@@ -227,8 +227,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Outerport \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-dreamrp",
@@ -238,8 +238,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "DreamRP \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-conductor",
@@ -249,8 +249,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Conductor \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-syntra",
@@ -260,8 +260,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Syntra \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-pathpilot",
@@ -271,8 +271,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "PathPilot \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-bits-to-atoms",
@@ -282,8 +282,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Bits to Atoms \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-simcare",
@@ -293,8 +293,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "SimCare \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-merlin-ai",
@@ -304,8 +304,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Merlin AI \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-freestyle",
@@ -315,8 +315,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Freestyle \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-arva-ai",
@@ -326,8 +326,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Arva AI \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-affil-ai",
@@ -337,8 +337,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Affil.ai \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-orgorg",
@@ -348,8 +348,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "OrgOrg \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-patched",
@@ -359,8 +359,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Patched \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-village-labs",
@@ -370,8 +370,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Village Labs \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-mica-ai",
@@ -381,8 +381,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Mica AI \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-formula-insight",
@@ -392,8 +392,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Formula Insight \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-overlap",
@@ -403,8 +403,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Overlap \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-capitol-ai",
@@ -414,8 +414,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Capitol AI \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-void",
@@ -425,8 +425,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Void \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "yc-s24-anglera",
@@ -436,8 +436,8 @@
     "amount_usd": 500000,
     "industry": "Other",
     "summary": "Anglera \u2014 YC S24 company.",
-    "announced_date": "2026-10-28",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "announced_date": "2026-10-29",
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "harvey-series-c",
@@ -448,7 +448,7 @@
     "industry": "B2B SaaS",
     "summary": "AI platform for legal work \u2014 research, drafting, due diligence and contracts.",
     "announced_date": "2025-01-16",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "anysphere-series-b",
@@ -459,7 +459,7 @@
     "industry": "DevTools",
     "summary": "AI-first code editor that understands entire codebases and writes production code.",
     "announced_date": "2025-01-07",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "anthropic-2024",
@@ -470,7 +470,7 @@
     "industry": "AI/ML",
     "summary": "Safety-focused AI lab building the Claude family of models.",
     "announced_date": "2024-10-27",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "openai-2024",
@@ -481,7 +481,7 @@
     "industry": "AI/ML",
     "summary": "Frontier AI research lab behind GPT-4o, DALL-E and Sora.",
     "announced_date": "2024-10-02",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "openevidence-series-b",
@@ -492,7 +492,7 @@
     "industry": "HealthTech",
     "summary": "AI clinical decision support tool that surfaces evidence-based answers for physicians.",
     "announced_date": "2024-10-01",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "glean-series-e",
@@ -503,7 +503,7 @@
     "industry": "B2B SaaS",
     "summary": "Work AI platform that searches across all company apps and answers questions.",
     "announced_date": "2024-09-12",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "modal-series-b",
@@ -514,7 +514,7 @@
     "industry": "DevTools",
     "summary": "Serverless cloud for running Python ML workloads with zero infrastructure config.",
     "announced_date": "2024-09-11",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "codeium-series-c",
@@ -525,7 +525,7 @@
     "industry": "DevTools",
     "summary": "AI coding assistant and Windsurf IDE with deep repo-level context.",
     "announced_date": "2024-08-29",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "lambda-series-c",
@@ -536,7 +536,7 @@
     "industry": "AI/ML",
     "summary": "GPU cloud and workstations purpose-built for AI training and inference.",
     "announced_date": "2024-08-20",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "ramp-series-d",
@@ -547,7 +547,7 @@
     "industry": "Fintech",
     "summary": "AI-powered corporate card and spend management platform for finance teams.",
     "announced_date": "2024-08-12",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "sakana-ai-series-a",
@@ -558,7 +558,7 @@
     "industry": "AI/ML",
     "summary": "Tokyo-based AI lab applying nature-inspired intelligence to model design.",
     "announced_date": "2024-08-07",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "groq-series-d",
@@ -569,7 +569,7 @@
     "industry": "AI/ML",
     "summary": "LPU inference hardware delivering ultra-fast token generation for LLMs.",
     "announced_date": "2024-08-05",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "hippocratic-ai-series-b",
@@ -580,7 +580,7 @@
     "industry": "HealthTech",
     "summary": "Safety-focused AI health agents for patient communication and care navigation.",
     "announced_date": "2024-07-23",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "cohere-series-d",
@@ -591,7 +591,7 @@
     "industry": "AI/ML",
     "summary": "Enterprise AI platform for search, retrieval and text generation at scale.",
     "announced_date": "2024-07-22",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "mercury-series-c",
@@ -602,7 +602,7 @@
     "industry": "Fintech",
     "summary": "Banking stack for startups including accounts, cards, treasury and venture debt.",
     "announced_date": "2024-07-16",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "perplexity-series-b",
@@ -613,7 +613,7 @@
     "industry": "AI/ML",
     "summary": "AI-native search engine delivering cited, real-time answers.",
     "announced_date": "2024-06-20",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "mercor-series-a",
@@ -624,7 +624,7 @@
     "industry": "HR Tech",
     "summary": "AI hiring platform that screens, interviews and ranks candidates automatically.",
     "announced_date": "2024-06-18",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "mistral-series-b",
@@ -635,7 +635,7 @@
     "industry": "AI/ML",
     "summary": "European AI lab producing efficient open-weight and commercial LLMs.",
     "announced_date": "2024-06-11",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "baseten-series-c",
@@ -646,7 +646,7 @@
     "industry": "DevTools",
     "summary": "High-performance ML model inference infrastructure for production workloads.",
     "announced_date": "2024-06-04",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "xai-series-b",
@@ -657,7 +657,7 @@
     "industry": "AI/ML",
     "summary": "Elon Musk's AI company building the Grok LLM and AI infrastructure.",
     "announced_date": "2024-05-26",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "wiz-series-e",
@@ -668,7 +668,7 @@
     "industry": "Security",
     "summary": "Cloud security platform that maps and remediates risks across AWS, Azure and GCP.",
     "announced_date": "2024-05-07",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "rippling-series-g",
@@ -679,7 +679,7 @@
     "industry": "B2B SaaS",
     "summary": "Unified HR, IT and Finance platform for managing the entire employee lifecycle.",
     "announced_date": "2024-04-22",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "synthesis-series-b",
@@ -690,7 +690,7 @@
     "industry": "EdTech",
     "summary": "AI math tutor for kids that adapts to each child's pace and learning style.",
     "announced_date": "2024-04-10",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "terabase-series-c",
@@ -701,7 +701,7 @@
     "industry": "CleanTech",
     "summary": "Software and robotics platform automating utility-scale solar farm construction.",
     "announced_date": "2024-03-20",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "together-ai-series-b",
@@ -712,7 +712,7 @@
     "industry": "AI/ML",
     "summary": "Cloud platform for training and running open-source AI models cheaply.",
     "announced_date": "2024-03-13",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "stripe-tender-offer",
@@ -723,7 +723,7 @@
     "industry": "Fintech",
     "summary": "Global payments infrastructure powering millions of internet businesses.",
     "announced_date": "2024-02-29",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "ashby-series-c",
@@ -734,7 +734,7 @@
     "industry": "HR Tech",
     "summary": "All-in-one recruiting platform with ATS, scheduling and analytics built-in.",
     "announced_date": "2024-02-22",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "vanta-series-c",
@@ -745,7 +745,7 @@
     "industry": "Security",
     "summary": "Trust management platform automating security reviews and compliance certifications.",
     "announced_date": "2024-01-31",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "drata-series-c",
@@ -756,7 +756,7 @@
     "industry": "Security",
     "summary": "Automated compliance platform for SOC 2, ISO 27001, HIPAA and GDPR.",
     "announced_date": "2023-11-15",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "turquoise-health-series-b",
@@ -767,7 +767,7 @@
     "industry": "HealthTech",
     "summary": "Healthcare price transparency platform normalizing hospital pricing data.",
     "announced_date": "2023-10-24",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "form-energy-series-e",
@@ -778,7 +778,7 @@
     "industry": "CleanTech",
     "summary": "Iron-air multi-day energy storage for grid-scale renewable backup.",
     "announced_date": "2023-08-01",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "warp-series-b",
@@ -789,7 +789,7 @@
     "industry": "DevTools",
     "summary": "Rust-based terminal with AI command search and collaborative workflows.",
     "announced_date": "2023-04-05",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "khanmigo-series-a",
@@ -800,7 +800,7 @@
     "industry": "EdTech",
     "summary": "AI tutoring assistant embedded into Khan Academy's free education platform.",
     "announced_date": "2023-03-14",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "loop-returns-series-c",
@@ -811,7 +811,7 @@
     "industry": "E-commerce",
     "summary": "Returns management platform for Shopify brands reducing refund rates.",
     "announced_date": "2022-11-16",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "linear-series-b",
@@ -822,7 +822,7 @@
     "industry": "B2B SaaS",
     "summary": "Fast, opinionated issue tracker built for high-velocity software teams.",
     "announced_date": "2022-09-14",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "flexport-series-e",
@@ -833,7 +833,7 @@
     "industry": "E-commerce",
     "summary": "Digital freight forwarder and supply chain visibility platform.",
     "announced_date": "2022-02-10",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "notion-series-c",
@@ -844,7 +844,7 @@
     "industry": "B2B SaaS",
     "summary": "All-in-one workspace for notes, wikis, databases and project management.",
     "announced_date": "2021-10-08",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   },
   {
     "id": "plaid-series-d",
@@ -855,6 +855,6 @@
     "industry": "Fintech",
     "summary": "Open banking API connecting financial apps to users' bank accounts.",
     "announced_date": "2021-04-07",
-    "ingested_at": "2026-10-28T08:09:17.313851+00:00"
+    "ingested_at": "2026-10-29T12:10:37.173014+00:00"
   }
 ]
