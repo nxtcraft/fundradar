@@ -8,7 +8,7 @@
     "industry": "B2B SaaS",
     "summary": "AI platform for legal work \u2014 research, drafting, due diligence and contracts.",
     "announced_date": "2025-01-16",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "anysphere-series-b",
@@ -19,7 +19,7 @@
     "industry": "DevTools",
     "summary": "AI-first code editor that understands entire codebases and writes production code.",
     "announced_date": "2025-01-07",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "anthropic-2024",
@@ -30,7 +30,7 @@
     "industry": "AI/ML",
     "summary": "Safety-focused AI lab building the Claude family of models.",
     "announced_date": "2024-10-27",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "hedra-series-a",
@@ -41,7 +41,7 @@
     "industry": "AI/ML",
     "summary": "AI video generation focused on character animation and talking avatar videos.",
     "announced_date": "2024-10-15",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "openai-2024",
@@ -52,7 +52,7 @@
     "industry": "AI/ML",
     "summary": "Frontier AI research lab behind GPT-4o, DALL-E and Sora.",
     "announced_date": "2024-10-02",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "openevidence-series-b",
@@ -63,7 +63,7 @@
     "industry": "HealthTech",
     "summary": "AI clinical decision support tool that surfaces evidence-based answers for physicians.",
     "announced_date": "2024-10-01",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "glean-series-e",
@@ -74,7 +74,7 @@
     "industry": "B2B SaaS",
     "summary": "Work AI platform that searches across all company apps and answers questions.",
     "announced_date": "2024-09-12",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "modal-series-b",
@@ -85,7 +85,7 @@
     "industry": "DevTools",
     "summary": "Serverless cloud for running Python ML workloads with zero infrastructure config.",
     "announced_date": "2024-09-11",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "phdata-series-b",
@@ -96,7 +96,7 @@
     "industry": "AI/ML",
     "summary": "Data and AI services firm backed by Anthropic and others. Helps enterprises adopt AI with Snowflake, Databricks, and Claude-powered solutions.",
     "announced_date": "2024-09-10",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "codeium-series-c",
@@ -107,7 +107,7 @@
     "industry": "DevTools",
     "summary": "AI coding assistant and Windsurf IDE with deep repo-level context.",
     "announced_date": "2024-08-29",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "lambda-series-c",
@@ -118,7 +118,7 @@
     "industry": "AI/ML",
     "summary": "GPU cloud and workstations purpose-built for AI training and inference.",
     "announced_date": "2024-08-20",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "ideogram-series-b",
@@ -129,7 +129,7 @@
     "industry": "AI/ML",
     "summary": "AI image generation with industry-leading text rendering inside images.",
     "announced_date": "2024-08-20",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "ramp-series-d",
@@ -140,7 +140,7 @@
     "industry": "Fintech",
     "summary": "AI-powered corporate card and spend management platform for finance teams.",
     "announced_date": "2024-08-12",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "poolside-series-b",
@@ -151,7 +151,7 @@
     "industry": "AI/ML",
     "summary": "AI coding model company building foundation models trained purely on code.",
     "announced_date": "2024-08-08",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "sakana-ai-series-a",
@@ -162,7 +162,7 @@
     "industry": "AI/ML",
     "summary": "Tokyo-based AI lab applying nature-inspired intelligence to model design.",
     "announced_date": "2024-08-07",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "inngest-series-a",
@@ -173,7 +173,7 @@
     "industry": "DevTools",
     "summary": "Durable workflow engine for background jobs, queues, and event-driven functions.",
     "announced_date": "2024-08-06",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "groq-series-d",
@@ -184,7 +184,7 @@
     "industry": "AI/ML",
     "summary": "LPU inference hardware delivering ultra-fast token generation for LLMs.",
     "announced_date": "2024-08-05",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "hippocratic-ai-series-b",
@@ -195,7 +195,7 @@
     "industry": "HealthTech",
     "summary": "Safety-focused AI health agents for patient communication and care navigation.",
     "announced_date": "2024-07-23",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "cohere-series-d",
@@ -206,7 +206,7 @@
     "industry": "AI/ML",
     "summary": "Enterprise AI platform for search, retrieval and text generation at scale.",
     "announced_date": "2024-07-22",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "mercury-series-c",
@@ -217,7 +217,7 @@
     "industry": "Fintech",
     "summary": "Banking stack for startups including accounts, cards, treasury and venture debt.",
     "announced_date": "2024-07-16",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "fern-series-a",
@@ -228,7 +228,7 @@
     "industry": "DevTools",
     "summary": "SDK and API docs generator \u2014 auto-generates typed SDKs from OpenAPI specs.",
     "announced_date": "2024-07-09",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "perplexity-series-b",
@@ -239,7 +239,7 @@
     "industry": "AI/ML",
     "summary": "AI-native search engine delivering cited, real-time answers.",
     "announced_date": "2024-06-20",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "haize-labs-seed",
@@ -250,7 +250,7 @@
     "industry": "Security",
     "summary": "AI red-teaming startup that automatically finds safety failures in LLMs.",
     "announced_date": "2024-06-20",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "mercor-series-a",
@@ -261,7 +261,7 @@
     "industry": "HR Tech",
     "summary": "AI hiring platform that screens, interviews and ranks candidates automatically.",
     "announced_date": "2024-06-18",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "luma-ai-series-c",
@@ -272,7 +272,7 @@
     "industry": "AI/ML",
     "summary": "3D capture and AI video generation platform behind Dream Machine.",
     "announced_date": "2024-06-12",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "mistral-series-b",
@@ -283,7 +283,7 @@
     "industry": "AI/ML",
     "summary": "European AI lab producing efficient open-weight and commercial LLMs.",
     "announced_date": "2024-06-11",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "baseten-series-c",
@@ -294,7 +294,7 @@
     "industry": "DevTools",
     "summary": "High-performance ML model inference infrastructure for production workloads.",
     "announced_date": "2024-06-04",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "xai-series-b",
@@ -305,7 +305,7 @@
     "industry": "AI/ML",
     "summary": "Elon Musk's AI company building the Grok LLM and AI infrastructure.",
     "announced_date": "2024-05-26",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "brex-series-e",
@@ -316,7 +316,7 @@
     "industry": "Fintech",
     "summary": "AI-powered spend management and corporate cards for startups and enterprises.",
     "announced_date": "2024-05-23",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "datavant-series-b",
@@ -327,7 +327,7 @@
     "industry": "Security",
     "summary": "AI-native email security platform stopping socially-engineered attacks.",
     "announced_date": "2024-05-15",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "depot-series-a",
@@ -338,7 +338,7 @@
     "industry": "DevTools",
     "summary": "Remote Docker build acceleration \u2014 40x faster CI builds with persistent caching.",
     "announced_date": "2024-05-14",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "wiz-series-e",
@@ -349,7 +349,7 @@
     "industry": "Security",
     "summary": "Cloud security platform that maps and remediates risks across AWS, Azure and GCP.",
     "announced_date": "2024-05-07",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "rippling-series-g",
@@ -360,7 +360,7 @@
     "industry": "B2B SaaS",
     "summary": "Unified HR, IT and Finance platform for managing the entire employee lifecycle.",
     "announced_date": "2024-04-22",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "synthesis-series-b",
@@ -371,7 +371,7 @@
     "industry": "EdTech",
     "summary": "AI math tutor for kids that adapts to each child's pace and learning style.",
     "announced_date": "2024-04-10",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "terabase-series-c",
@@ -382,7 +382,7 @@
     "industry": "CleanTech",
     "summary": "Software and robotics platform automating utility-scale solar farm construction.",
     "announced_date": "2024-03-20",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "together-ai-series-b",
@@ -393,7 +393,7 @@
     "industry": "AI/ML",
     "summary": "Cloud platform for training and running open-source AI models cheaply.",
     "announced_date": "2024-03-13",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "stripe-tender-offer",
@@ -404,7 +404,7 @@
     "industry": "Fintech",
     "summary": "Global payments infrastructure powering millions of internet businesses.",
     "announced_date": "2024-02-29",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "ashby-series-c",
@@ -415,7 +415,7 @@
     "industry": "HR Tech",
     "summary": "All-in-one recruiting platform with ATS, scheduling and analytics built-in.",
     "announced_date": "2024-02-22",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "pika-labs-series-b",
@@ -426,7 +426,7 @@
     "industry": "AI/ML",
     "summary": "AI video generation platform turning ideas into cinematic video clips.",
     "announced_date": "2024-02-08",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "clay-series-b",
@@ -437,7 +437,7 @@
     "industry": "B2B SaaS",
     "summary": "AI-powered sales prospecting platform enriching leads from 75+ data sources.",
     "announced_date": "2024-02-07",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "vanta-series-c",
@@ -448,7 +448,7 @@
     "industry": "Security",
     "summary": "Trust management platform automating security reviews and compliance certifications.",
     "announced_date": "2024-01-31",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "zed-industries-series-a",
@@ -459,7 +459,7 @@
     "industry": "DevTools",
     "summary": "High-performance Rust-based code editor with real-time collaboration built-in.",
     "announced_date": "2024-01-24",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "elevenlabs-series-c",
@@ -470,7 +470,7 @@
     "industry": "AI/ML",
     "summary": "AI voice synthesis platform with ultra-realistic cloning in 29 languages.",
     "announced_date": "2024-01-22",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "runway-series-c",
@@ -481,7 +481,7 @@
     "industry": "AI/ML",
     "summary": "Creative AI company behind Gen-2 and Gen-3 video generation models.",
     "announced_date": "2023-12-05",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "drata-series-c",
@@ -492,7 +492,7 @@
     "industry": "Security",
     "summary": "Automated compliance platform for SOC 2, ISO 27001, HIPAA and GDPR.",
     "announced_date": "2023-11-15",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "olo-series-f",
@@ -503,7 +503,7 @@
     "industry": "B2B SaaS",
     "summary": "AI presentation and document builder replacing PowerPoint for modern teams.",
     "announced_date": "2023-11-01",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "turquoise-health-series-b",
@@ -514,7 +514,7 @@
     "industry": "HealthTech",
     "summary": "Healthcare price transparency platform normalizing hospital pricing data.",
     "announced_date": "2023-10-24",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "imbue-series-b",
@@ -525,7 +525,7 @@
     "industry": "AI/ML",
     "summary": "AI research lab focused on building practical AI agents that reason and code.",
     "announced_date": "2023-09-12",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "form-energy-series-e",
@@ -536,7 +536,7 @@
     "industry": "CleanTech",
     "summary": "Iron-air multi-day energy storage for grid-scale renewable backup.",
     "announced_date": "2023-08-01",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "warp-series-b",
@@ -547,7 +547,7 @@
     "industry": "DevTools",
     "summary": "Rust-based terminal with AI command search and collaborative workflows.",
     "announced_date": "2023-04-05",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "khanmigo-series-a",
@@ -558,7 +558,7 @@
     "industry": "EdTech",
     "summary": "AI tutoring assistant embedded into Khan Academy's free education platform.",
     "announced_date": "2023-03-14",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "loop-returns-series-c",
@@ -569,7 +569,7 @@
     "industry": "E-commerce",
     "summary": "Returns management platform for Shopify brands reducing refund rates.",
     "announced_date": "2022-11-16",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "linear-series-b",
@@ -580,7 +580,7 @@
     "industry": "B2B SaaS",
     "summary": "Fast, opinionated issue tracker built for high-velocity software teams.",
     "announced_date": "2022-09-14",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "flexport-series-e",
@@ -591,7 +591,7 @@
     "industry": "E-commerce",
     "summary": "Digital freight forwarder and supply chain visibility platform.",
     "announced_date": "2022-02-10",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "notion-series-c",
@@ -602,7 +602,7 @@
     "industry": "B2B SaaS",
     "summary": "All-in-one workspace for notes, wikis, databases and project management.",
     "announced_date": "2021-10-08",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   },
   {
     "id": "plaid-series-d",
@@ -613,6 +613,6 @@
     "industry": "Fintech",
     "summary": "Open banking API connecting financial apps to users' bank accounts.",
     "announced_date": "2021-04-07",
-    "ingested_at": "2026-10-31T12:06:19.838360+00:00"
+    "ingested_at": "2026-10-31T12:40:59.647725+00:00"
   }
 ]
