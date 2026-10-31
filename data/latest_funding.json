@@ -1,5 +1,148 @@
 [
   {
+    "id": "sec-s1-s-1-mobix-labs-inc-0001855467-filer-",
+    "company_name": "S-1 - MOBIX LABS, INC (0001855467) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "Other",
+    "summary": "S-1 - MOBIX LABS, INC (0001855467) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-capstone-holding-corp-0000887151-filer-",
+    "company_name": "S-1 - Capstone Holding Corp. (0000887151) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "Other",
+    "summary": "S-1 - Capstone Holding Corp. (0000887151) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-parabolic-technologies-inc-0001826011-filer-",
+    "company_name": "S-1 - Parabolic Technologies, Inc. (0001826011) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "Other",
+    "summary": "S-1 - Parabolic Technologies, Inc. (0001826011) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-a-ionetix-corp-de-0002108121-filer-",
+    "company_name": "S-1/A - Ionetix Corp / DE / (0002108121) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "Other",
+    "summary": "S-1/A - Ionetix Corp / DE / (0002108121) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-a-bio-key-international-inc-0001019034-filer-",
+    "company_name": "S-1/A - BIO KEY INTERNATIONAL INC (0001019034) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "Other",
+    "summary": "S-1/A - BIO KEY INTERNATIONAL INC (0001019034) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-a-interpace-biosciences-inc-0001054102-filer-",
+    "company_name": "S-1/A - INTERPACE BIOSCIENCES, INC. (0001054102) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "B2B SaaS",
+    "summary": "S-1/A - INTERPACE BIOSCIENCES, INC. (0001054102) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-evernorth-holdings-inc-0002092592-filer-",
+    "company_name": "S-1 - Evernorth Holdings Inc. (0002092592) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "CleanTech",
+    "summary": "S-1 - Evernorth Holdings Inc. (0002092592) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-ucsb-acquisition-corp-0002147831-filer-",
+    "company_name": "S-1 - UCSB Acquisition Corp. (0002147831) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "Other",
+    "summary": "S-1 - UCSB Acquisition Corp. (0002147831) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-a-ipower-inc-0001830072-filer-",
+    "company_name": "S-1/A - iPower Inc. (0001830072) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "Other",
+    "summary": "S-1/A - iPower Inc. (0001830072) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-exascale-labs-holdings-inc-0002109869-filer-",
+    "company_name": "S-1 - Exascale Labs Holdings Inc. (0002109869) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "Other",
+    "summary": "S-1 - Exascale Labs Holdings Inc. (0002109869) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-a-stratum-holdings-corp-0001879403-filer-",
+    "company_name": "S-1/A - Stratum Holdings Corp. (0001879403) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "Other",
+    "summary": "S-1/A - Stratum Holdings Corp. (0001879403) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-a-velos-acquisition-i-corp-0002016072-filer-",
+    "company_name": "S-1/A - Velos Acquisition I Corp. (0002016072) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "Other",
+    "summary": "S-1/A - Velos Acquisition I Corp. (0002016072) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
+    "id": "sec-s1-s-1-a-duke-holding-inc-0002079000-filer-",
+    "company_name": "S-1/A - Duke Holding Inc. (0002079000) (Filer)",
+    "website": "",
+    "round_type": "Growth",
+    "amount_usd": null,
+    "industry": "Other",
+    "summary": "S-1/A - Duke Holding Inc. (0002079000) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
+  },
+  {
     "id": "sec-s1-s-1-a-vs-trust-0001793497-filer-",
     "company_name": "S-1/A - VS Trust (0001793497) (Filer)",
     "website": "",
@@ -7,8 +150,8 @@
     "amount_usd": null,
     "industry": "Other",
     "summary": "S-1/A - VS Trust (0001793497) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
-    "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-s1-s-1mef-bambusa-therapeutics-inc-0002044950-filer-",
@@ -18,8 +161,8 @@
     "amount_usd": null,
     "industry": "Other",
     "summary": "S-1MEF - Bambusa Therapeutics, Inc. (0002044950) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
-    "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-s1-s-1-stratum-holdings-corp-0001879403-filer-",
@@ -29,8 +172,8 @@
     "amount_usd": null,
     "industry": "Other",
     "summary": "S-1 - Stratum Holdings Corp. (0001879403) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
-    "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-s1-s-1-a-usbc-inc-0001074828-filer-",
@@ -40,8 +183,8 @@
     "amount_usd": null,
     "industry": "Other",
     "summary": "S-1/A - USBC, Inc. (0001074828) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
-    "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-s1-s-1-kat-construction-services-inc-0002142104-filer-",
@@ -51,8 +194,8 @@
     "amount_usd": null,
     "industry": "Other",
     "summary": "S-1 - KAT Construction Services, Inc. (0002142104) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
-    "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-s1-s-1-redwoods-acquisition-corp-ii-0002152549-filer-",
@@ -62,8 +205,8 @@
     "amount_usd": null,
     "industry": "Other",
     "summary": "S-1 - Redwoods Acquisition Corp II (0002152549) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
-    "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-s1-s-1-a-med-x-inc-0001620704-filer-",
@@ -73,74 +216,19 @@
     "amount_usd": null,
     "industry": "Other",
     "summary": "S-1/A - MED-X, INC. (0001620704) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
-    "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "announced_date": "2026-10-31",
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
-    "id": "sec-s1-s-1-a-ocean-power-technologies-inc-0001378140-filer-",
-    "company_name": "S-1/A - Ocean Power Technologies, Inc. (0001378140) (Filer)",
+    "id": "sec-8k-adm-tronics-unlimited-inc-20261030",
+    "company_name": "ADM TRONICS UNLIMITED, INC.",
     "website": "",
     "round_type": "Growth",
     "amount_usd": null,
     "industry": "Other",
-    "summary": "S-1/A - Ocean Power Technologies, Inc. (0001378140) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
+    "summary": "ADM TRONICS UNLIMITED, INC. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
-  },
-  {
-    "id": "sec-s1-s-1-a-football-manager-spac-inc-0002133939-filer-",
-    "company_name": "S-1/A - Football Manager SPAC Inc. (0002133939) (Filer)",
-    "website": "",
-    "round_type": "Growth",
-    "amount_usd": null,
-    "industry": "Other",
-    "summary": "S-1/A - Football Manager SPAC Inc. (0002133939) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
-    "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
-  },
-  {
-    "id": "sec-s1-s-1-a-nuvox-therapeutics-inc-0001966126-filer-",
-    "company_name": "S-1/A - NuvOx Therapeutics, Inc. (0001966126) (Filer)",
-    "website": "",
-    "round_type": "Growth",
-    "amount_usd": null,
-    "industry": "Other",
-    "summary": "S-1/A - NuvOx Therapeutics, Inc. (0001966126) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
-    "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
-  },
-  {
-    "id": "sec-s1-s-1-a-starton-holdings-inc-0002049977-filer-",
-    "company_name": "S-1/A - Starton Holdings, Inc. (0002049977) (Filer)",
-    "website": "",
-    "round_type": "Growth",
-    "amount_usd": null,
-    "industry": "Other",
-    "summary": "S-1/A - Starton Holdings, Inc. (0002049977) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
-    "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
-  },
-  {
-    "id": "sec-s1-s-1-a-glow-holdings-inc-0001114859-filer-",
-    "company_name": "S-1/A - Glow Holdings, Inc. (0001114859) (Filer)",
-    "website": "",
-    "round_type": "Growth",
-    "amount_usd": null,
-    "industry": "Other",
-    "summary": "S-1/A - Glow Holdings, Inc. (0001114859) (Filer) filed an S-1 registration statement with the SEC, indicating intent to go public.",
-    "announced_date": "2026-10-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
-  },
-  {
-    "id": "sec-8k-new-era-energy-digital-inc-20261029",
-    "company_name": "New ERA Energy & Digital, Inc.",
-    "website": "",
-    "round_type": "Growth",
-    "amount_usd": null,
-    "industry": "Other",
-    "summary": "New ERA Energy & Digital, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
-    "announced_date": "2026-10-29",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-hydrofarm-holdings-group-inc-20261027",
@@ -151,7 +239,7 @@
     "industry": "Other",
     "summary": "HYDROFARM HOLDINGS GROUP, INC. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-10-27",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-equillium-inc-20261026",
@@ -162,7 +250,7 @@
     "industry": "Other",
     "summary": "Equillium, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-10-26",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-bolt-biotherapeutics-inc-20261023",
@@ -173,7 +261,7 @@
     "industry": "Other",
     "summary": "Bolt Biotherapeutics, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-10-23",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-data-i-o-corp-20261022",
@@ -184,7 +272,7 @@
     "industry": "Other",
     "summary": "DATA I/O CORP filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-10-22",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-first-tracks-biotherapeutics-inc-20261015",
@@ -195,7 +283,7 @@
     "industry": "Other",
     "summary": "First Tracks Biotherapeutics, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-10-15",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-adc-therapeutics-sa-20261013",
@@ -206,7 +294,7 @@
     "industry": "Other",
     "summary": "ADC Therapeutics SA filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-10-13",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-atrium-therapeutics-inc-20261008",
@@ -217,7 +305,7 @@
     "industry": "Other",
     "summary": "Atrium Therapeutics, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-10-08",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-telomir-pharmaceuticals-inc-20261006",
@@ -228,7 +316,7 @@
     "industry": "Other",
     "summary": "Telomir Pharmaceuticals, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-10-06",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-national-fuel-gas-co-20261001",
@@ -239,7 +327,7 @@
     "industry": "Other",
     "summary": "NATIONAL FUEL GAS CO filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-10-01",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-beasley-broadcast-group-inc-20260930",
@@ -250,7 +338,7 @@
     "industry": "Other",
     "summary": "BEASLEY BROADCAST GROUP INC filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-09-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-zedge-inc-20260930",
@@ -261,7 +349,7 @@
     "industry": "Other",
     "summary": "Zedge, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-09-30",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-adarx-pharmaceuticals-inc-20260928",
@@ -272,7 +360,7 @@
     "industry": "Other",
     "summary": "ADARx Pharmaceuticals, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-09-28",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-aethlon-medical-inc-20260917",
@@ -283,7 +371,7 @@
     "industry": "Other",
     "summary": "AETHLON MEDICAL INC filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-09-17",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-sphere-3d-corp-20260911",
@@ -294,7 +382,7 @@
     "industry": "Other",
     "summary": "Sphere 3D Corp. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-09-11",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-scribe-therapeutics-inc-20260902",
@@ -305,7 +393,7 @@
     "industry": "Other",
     "summary": "Scribe Therapeutics, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-09-02",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-inflection-point-acquisition-corp-v-20260831",
@@ -316,7 +404,7 @@
     "industry": "Other",
     "summary": "Inflection Point Acquisition Corp. V filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-31",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-quoin-pharmaceuticals-ltd-20260828",
@@ -327,7 +415,7 @@
     "industry": "Other",
     "summary": "Quoin Pharmaceuticals, Ltd. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-28",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-expion360-inc-20260824",
@@ -338,7 +426,7 @@
     "industry": "Other",
     "summary": "Expion360 Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-24",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-gossamer-bio-inc-20260821",
@@ -349,7 +437,7 @@
     "industry": "Other",
     "summary": "Gossamer Bio, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-21",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-werewolf-therapeutics-inc-20260821",
@@ -360,7 +448,7 @@
     "industry": "Other",
     "summary": "Werewolf Therapeutics, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-21",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-dyadic-international-inc-20260814",
@@ -371,7 +459,7 @@
     "industry": "Other",
     "summary": "DYADIC INTERNATIONAL INC filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-14",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-pyxis-oncology-inc-20260813",
@@ -382,7 +470,7 @@
     "industry": "Other",
     "summary": "Pyxis Oncology, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-13",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-ensysce-biosciences-inc-20260813",
@@ -393,7 +481,7 @@
     "industry": "Other",
     "summary": "Ensysce Biosciences, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-13",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-solidion-technology-inc-20260812",
@@ -404,7 +492,7 @@
     "industry": "Other",
     "summary": "Solidion Technology Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-12",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-adial-pharmaceuticals-inc-20260811",
@@ -415,7 +503,7 @@
     "industry": "Other",
     "summary": "ADIAL PHARMACEUTICALS, INC. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-11",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-entera-bio-ltd-20260807",
@@ -426,7 +514,7 @@
     "industry": "Other",
     "summary": "Entera Bio Ltd. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-07",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-ensysce-biosciences-inc-20260806",
@@ -437,7 +525,7 @@
     "industry": "Other",
     "summary": "Ensysce Biosciences, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-06",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sec-8k-obsidian-therapeutics-inc-20260803",
@@ -448,7 +536,7 @@
     "industry": "Other",
     "summary": "Obsidian Therapeutics, Inc. filed an 8-K with the SEC disclosing a private placement or securities transaction.",
     "announced_date": "2026-08-03",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "harvey-series-c",
@@ -459,7 +547,7 @@
     "industry": "B2B SaaS",
     "summary": "AI platform for legal work \u2014 research, drafting, due diligence and contracts.",
     "announced_date": "2025-01-16",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "anysphere-series-b",
@@ -470,7 +558,7 @@
     "industry": "DevTools",
     "summary": "AI-first code editor that understands entire codebases and writes production code.",
     "announced_date": "2025-01-07",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "anthropic-2024",
@@ -481,7 +569,7 @@
     "industry": "AI/ML",
     "summary": "Safety-focused AI lab building the Claude family of models.",
     "announced_date": "2024-10-27",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "openai-2024",
@@ -492,7 +580,7 @@
     "industry": "AI/ML",
     "summary": "Frontier AI research lab behind GPT-4o, DALL-E and Sora.",
     "announced_date": "2024-10-02",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "openevidence-series-b",
@@ -503,7 +591,7 @@
     "industry": "HealthTech",
     "summary": "AI clinical decision support tool that surfaces evidence-based answers for physicians.",
     "announced_date": "2024-10-01",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "glean-series-e",
@@ -514,7 +602,7 @@
     "industry": "B2B SaaS",
     "summary": "Work AI platform that searches across all company apps and answers questions.",
     "announced_date": "2024-09-12",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "modal-series-b",
@@ -525,7 +613,7 @@
     "industry": "DevTools",
     "summary": "Serverless cloud for running Python ML workloads with zero infrastructure config.",
     "announced_date": "2024-09-11",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "codeium-series-c",
@@ -536,7 +624,7 @@
     "industry": "DevTools",
     "summary": "AI coding assistant and Windsurf IDE with deep repo-level context.",
     "announced_date": "2024-08-29",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "lambda-series-c",
@@ -547,7 +635,7 @@
     "industry": "AI/ML",
     "summary": "GPU cloud and workstations purpose-built for AI training and inference.",
     "announced_date": "2024-08-20",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "ramp-series-d",
@@ -558,7 +646,7 @@
     "industry": "Fintech",
     "summary": "AI-powered corporate card and spend management platform for finance teams.",
     "announced_date": "2024-08-12",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "sakana-ai-series-a",
@@ -569,7 +657,7 @@
     "industry": "AI/ML",
     "summary": "Tokyo-based AI lab applying nature-inspired intelligence to model design.",
     "announced_date": "2024-08-07",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "groq-series-d",
@@ -580,7 +668,7 @@
     "industry": "AI/ML",
     "summary": "LPU inference hardware delivering ultra-fast token generation for LLMs.",
     "announced_date": "2024-08-05",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "hippocratic-ai-series-b",
@@ -591,7 +679,7 @@
     "industry": "HealthTech",
     "summary": "Safety-focused AI health agents for patient communication and care navigation.",
     "announced_date": "2024-07-23",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "cohere-series-d",
@@ -602,7 +690,7 @@
     "industry": "AI/ML",
     "summary": "Enterprise AI platform for search, retrieval and text generation at scale.",
     "announced_date": "2024-07-22",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "mercury-series-c",
@@ -613,7 +701,7 @@
     "industry": "Fintech",
     "summary": "Banking stack for startups including accounts, cards, treasury and venture debt.",
     "announced_date": "2024-07-16",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "perplexity-series-b",
@@ -624,7 +712,7 @@
     "industry": "AI/ML",
     "summary": "AI-native search engine delivering cited, real-time answers.",
     "announced_date": "2024-06-20",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "mercor-series-a",
@@ -635,7 +723,7 @@
     "industry": "HR Tech",
     "summary": "AI hiring platform that screens, interviews and ranks candidates automatically.",
     "announced_date": "2024-06-18",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "mistral-series-b",
@@ -646,7 +734,7 @@
     "industry": "AI/ML",
     "summary": "European AI lab producing efficient open-weight and commercial LLMs.",
     "announced_date": "2024-06-11",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "baseten-series-c",
@@ -657,7 +745,7 @@
     "industry": "DevTools",
     "summary": "High-performance ML model inference infrastructure for production workloads.",
     "announced_date": "2024-06-04",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "xai-series-b",
@@ -668,7 +756,7 @@
     "industry": "AI/ML",
     "summary": "Elon Musk's AI company building the Grok LLM and AI infrastructure.",
     "announced_date": "2024-05-26",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "wiz-series-e",
@@ -679,7 +767,7 @@
     "industry": "Security",
     "summary": "Cloud security platform that maps and remediates risks across AWS, Azure and GCP.",
     "announced_date": "2024-05-07",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "rippling-series-g",
@@ -690,7 +778,7 @@
     "industry": "B2B SaaS",
     "summary": "Unified HR, IT and Finance platform for managing the entire employee lifecycle.",
     "announced_date": "2024-04-22",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "synthesis-series-b",
@@ -701,7 +789,7 @@
     "industry": "EdTech",
     "summary": "AI math tutor for kids that adapts to each child's pace and learning style.",
     "announced_date": "2024-04-10",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "terabase-series-c",
@@ -712,7 +800,7 @@
     "industry": "CleanTech",
     "summary": "Software and robotics platform automating utility-scale solar farm construction.",
     "announced_date": "2024-03-20",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "together-ai-series-b",
@@ -723,7 +811,7 @@
     "industry": "AI/ML",
     "summary": "Cloud platform for training and running open-source AI models cheaply.",
     "announced_date": "2024-03-13",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "stripe-tender-offer",
@@ -734,7 +822,7 @@
     "industry": "Fintech",
     "summary": "Global payments infrastructure powering millions of internet businesses.",
     "announced_date": "2024-02-29",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "ashby-series-c",
@@ -745,7 +833,7 @@
     "industry": "HR Tech",
     "summary": "All-in-one recruiting platform with ATS, scheduling and analytics built-in.",
     "announced_date": "2024-02-22",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "vanta-series-c",
@@ -756,7 +844,7 @@
     "industry": "Security",
     "summary": "Trust management platform automating security reviews and compliance certifications.",
     "announced_date": "2024-01-31",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "drata-series-c",
@@ -767,7 +855,7 @@
     "industry": "Security",
     "summary": "Automated compliance platform for SOC 2, ISO 27001, HIPAA and GDPR.",
     "announced_date": "2023-11-15",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "turquoise-health-series-b",
@@ -778,7 +866,7 @@
     "industry": "HealthTech",
     "summary": "Healthcare price transparency platform normalizing hospital pricing data.",
     "announced_date": "2023-10-24",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "form-energy-series-e",
@@ -789,7 +877,7 @@
     "industry": "CleanTech",
     "summary": "Iron-air multi-day energy storage for grid-scale renewable backup.",
     "announced_date": "2023-08-01",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "warp-series-b",
@@ -800,7 +888,7 @@
     "industry": "DevTools",
     "summary": "Rust-based terminal with AI command search and collaborative workflows.",
     "announced_date": "2023-04-05",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "khanmigo-series-a",
@@ -811,7 +899,7 @@
     "industry": "EdTech",
     "summary": "AI tutoring assistant embedded into Khan Academy's free education platform.",
     "announced_date": "2023-03-14",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "loop-returns-series-c",
@@ -822,7 +910,7 @@
     "industry": "E-commerce",
     "summary": "Returns management platform for Shopify brands reducing refund rates.",
     "announced_date": "2022-11-16",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "linear-series-b",
@@ -833,7 +921,7 @@
     "industry": "B2B SaaS",
     "summary": "Fast, opinionated issue tracker built for high-velocity software teams.",
     "announced_date": "2022-09-14",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "flexport-series-e",
@@ -844,7 +932,7 @@
     "industry": "E-commerce",
     "summary": "Digital freight forwarder and supply chain visibility platform.",
     "announced_date": "2022-02-10",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "notion-series-c",
@@ -855,7 +943,7 @@
     "industry": "B2B SaaS",
     "summary": "All-in-one workspace for notes, wikis, databases and project management.",
     "announced_date": "2021-10-08",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   },
   {
     "id": "plaid-series-d",
@@ -866,6 +954,6 @@
     "industry": "Fintech",
     "summary": "Open banking API connecting financial apps to users' bank accounts.",
     "announced_date": "2021-04-07",
-    "ingested_at": "2026-10-30T12:00:40.377456+00:00"
+    "ingested_at": "2026-10-31T11:36:46.589267+00:00"
   }
 ]
