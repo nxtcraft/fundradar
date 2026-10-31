@@ -2,15 +2,25 @@ name: Daily Funding Intelligence Ingest
 
 on:
   schedule:
-    - cron: "0 6 * * *"   # 06:00 UTC every day
-  workflow_dispatch:        # allow manual trigger
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  ingest:
+  ingest-and-deploy:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repository
@@ -28,6 +38,9 @@ jobs:
       - name: Run ingestion pipeline
         run: python pipeline.py
 
+      - name: Build static site
+        run: python build_site.py
+
       - name: Commit updated data
         run: |
           git config user.name  "github-actions[bot]"
@@ -36,3 +49,12 @@ jobs:
           git diff --cached --quiet || \
             git commit -m "chore: update startup intelligence feed [skip ci]"
           git push
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
