@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Track 56 recently funded startups. Filter by industry, round stage (Seed, Series A, B, C), and funding amount. Real-time B2B sales intelligence."/>
+<meta name="keywords" content="startup funding tracker, recently funded startups, series a startups, venture capital deals, b2b lead generation, startup intelligence"/>
+<meta property="og:title" content="FundRadar — Real-Time Startup Funding Intelligence"/>
+<meta property="og:description" content="Track 56 funded startups. Filter by stage, industry, and funding amount."/>
+<meta property="og:type" content="website"/>
+<title>FundRadar — Startup Funding &amp; B2B Intelligence</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "Startup Funding Intelligence \u2014 FundRadar", "description": "Track 56 recently funded startups with round sizes, stages, and industry data.", "url": "https://nxtcraft.github.io/fundradar"}</script>
+<style>
+:root{--bg:#060a12;--bg2:#0d1420;--card:#111827;--border:#1e2d40;--fg:#e2eaf4;--fg2:#7a8fa6;--fg3:#3d5068;--accent:#38bdf8;--green:#34d399;color-scheme:dark}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
+header{background:linear-gradient(160deg,#05111e 0%,#060a12 70%);padding:52px 20px 40px;text-align:center;border-bottom:1px solid var(--border)}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--green);font-weight:600;letter-spacing:.6px;text-transform:uppercase;margin-bottom:14px}
+.dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1{font-size:clamp(1.7rem,4vw,2.8rem);font-weight:700;color:#fff;margin-bottom:8px}
+h1 span{color:var(--accent)}
+.sub{color:var(--fg2);font-size:.95rem;max-width:480px;margin:0 auto 24px}
+.cta-bar{background:rgba(56,189,248,.07);border:1px solid rgba(56,189,248,.18);border-radius:8px;padding:11px 16px;max-width:600px;margin:0 auto;font-size:13px;color:var(--fg2)}
+.cta-bar a{color:var(--accent);font-weight:600}
+.stats{display:flex;justify-content:center;background:var(--bg2);border-bottom:1px solid var(--border)}
+.stat{text-align:center;padding:16px 24px;border-right:1px solid var(--border);flex:1;max-width:160px}
+.stat:last-child{border-right:none}
+.sn{font-size:1.4rem;font-weight:700;color:var(--accent)}
+.sl{font-size:10px;color:var(--fg3);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.controls{max-width:1040px;margin:24px auto;padding:0 16px;display:flex;flex-direction:column;gap:10px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+#search{flex:1;min-width:180px;background:var(--card);border:1px solid var(--border);border-radius:7px;padding:8px 12px;color:var(--fg);font-size:13px;outline:none}
+#search:focus{border-color:var(--accent)}
+select{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:8px 12px;color:var(--fg);font-size:13px;cursor:pointer;outline:none}
+.filter-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.label{font-size:11px;color:var(--fg3);margin-right:2px}
+.f-btn{background:var(--bg2);border:1px solid var(--border);color:var(--fg2);padding:3px 10px;border-radius:20px;font-size:11px;cursor:pointer;transition:.12s}
+.f-btn:hover,.f-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.count{font-size:12px;color:var(--fg3)}
+.grid{max-width:1040px;margin:0 auto;padding:0 16px 56px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:13px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s}
+.card:hover{border-color:var(--accent)}
+.card.hidden{display:none}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.co-name{font-size:13px;font-weight:600;color:var(--fg);margin-bottom:4px;line-height:1.3}
+.ind-tag{font-size:10px;color:var(--fg3);background:var(--bg2);padding:2px 6px;border-radius:3px}
+.stage-badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0;border:1px solid}
+.summary{font-size:11px;color:var(--fg2);flex:1;line-height:1.5}
+.card-foot{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.amt{font-size:12px;font-weight:600;color:var(--green)}
+.date{font-size:11px;color:var(--fg3)}
+.web-link{font-size:11px;color:var(--accent);text-decoration:none;margin-left:auto}
+.web-link:hover{text-decoration:underline}
+.none{display:none;text-align:center;padding:48px;color:var(--fg3)}
+.none.show{display:block}
+footer{text-align:center;padding:28px;border-top:1px solid var(--border);color:var(--fg3);font-size:12px}
+footer a{color:var(--accent)}
+@media(max-width:560px){.stats{flex-wrap:wrap}.stat{min-width:50%;border-right:none;border-bottom:1px solid var(--border)}}
+</style>
+</head>
+<body>
+<header>
+  <div class="live"><span class="dot"></span>Updated October 31, 2026 at 12:39 UTC</div>
+  <h1>Fund<span>Radar</span></h1>
+  <p class="sub">Real-time startup funding intelligence. Track newly funded companies for B2B sales, recruiting, and investment research.</p>
+  <div class="cta-bar">Need API access? <a href="https://rapidapi.com/PradeepKumarKesharwani/api/fundradar" target="_blank">Subscribe on RapidAPI</a> — filter by stage, industry, funding amount.</div>
+</header>
+<div class="stats">
+  <div class="stat"><div class="sn">56</div><div class="sl">Companies</div></div>
+  <div class="stat"><div class="sn">55</div><div class="sl">With Amount</div></div>
+  <div class="stat"><div class="sn">$28.5B</div><div class="sl">Total Tracked</div></div>
+  <div class="stat"><div class="sn">10</div><div class="sl">Industries</div></div>
+</div>
+<div class="controls">
+  <div class="row">
+    <input id="search" type="search" placeholder="Search company, industry, summary..." oninput="fil()"/>
+    <select id="amt-sel" onchange="fil()">
+      <option value="0">Any Amount</option>
+      <option value="1000000">$1M+</option>
+      <option value="5000000">$5M+</option>
+      <option value="10000000">$10M+</option>
+      <option value="50000000">$50M+</option>
+    </select>
+  </div>
+  <div class="filter-row">
+    <span class="label">Stage:</span><button class="f-btn" onclick="filterStage('Growth')">Growth</button><button class="f-btn" onclick="filterStage('Seed')">Seed</button><button class="f-btn" onclick="filterStage('Series A')">Series A</button><button class="f-btn" onclick="filterStage('Series B')">Series B</button><button class="f-btn" onclick="filterStage('Series C')">Series C</button><button class="f-btn" onclick="filterStage('Series D')">Series D</button><button class="f-btn" onclick="filterStage('Series E')">Series E</button>
+  </div>
+  <div class="filter-row">
+    <span class="label">Industry:</span><button class="f-btn" onclick="filterInd('AI/ML')">AI/ML</button><button class="f-btn" onclick="filterInd('B2B SaaS')">B2B SaaS</button><button class="f-btn" onclick="filterInd('CleanTech')">CleanTech</button><button class="f-btn" onclick="filterInd('DevTools')">DevTools</button><button class="f-btn" onclick="filterInd('E-commerce')">E-commerce</button><button class="f-btn" onclick="filterInd('EdTech')">EdTech</button><button class="f-btn" onclick="filterInd('Fintech')">Fintech</button><button class="f-btn" onclick="filterInd('HR Tech')">HR Tech</button><button class="f-btn" onclick="filterInd('HealthTech')">HealthTech</button><button class="f-btn" onclick="filterInd('Security')">Security</button>
+    <button class="f-btn" id="clear-btn" onclick="clearAll()" style="display:none">✕ Clear</button>
+  </div>
+  <div class="count" id="count">56 companies shown</div>
+</div>
+<div class="grid" id="grid">
+<article class="card" data-ind="B2B SaaS" data-stage="Series C" data-amt="300000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Harvey AI</h2>
+      <span class="ind-tag">B2B SaaS</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">AI platform for legal work — research, drafting, due diligence and contracts.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $300M</span>
+    <span class="date">📅 2025-01-16</span>
+    <a class='web-link' href='https://harvey.ai' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="DevTools" data-stage="Series B" data-amt="900000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Anysphere (Cursor)</h2>
+      <span class="ind-tag">DevTools</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">AI-first code editor that understands entire codebases and writes production code.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $900M</span>
+    <span class="date">📅 2025-01-07</span>
+    <a class='web-link' href='https://cursor.sh' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series D" data-amt="4000000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Anthropic</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#8b949e22;color:#8b949e;border-color:#8b949e44">Series D</span>
+  </div>
+  <p class="summary">Safety-focused AI lab building the Claude family of models.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $4.0B</span>
+    <span class="date">📅 2024-10-27</span>
+    <a class='web-link' href='https://anthropic.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series A" data-amt="32000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Hedra</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#58a6ff22;color:#58a6ff;border-color:#58a6ff44">Series A</span>
+  </div>
+  <p class="summary">AI video generation focused on character animation and talking avatar videos.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $32M</span>
+    <span class="date">📅 2024-10-15</span>
+    <a class='web-link' href='https://hedra.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Growth" data-amt="6600000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">OpenAI</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#f7816622;color:#f78166;border-color:#f7816644">Growth</span>
+  </div>
+  <p class="summary">Frontier AI research lab behind GPT-4o, DALL-E and Sora.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $6.6B</span>
+    <span class="date">📅 2024-10-02</span>
+    <a class='web-link' href='https://openai.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="HealthTech" data-stage="Series B" data-amt="75000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">OpenEvidence</h2>
+      <span class="ind-tag">HealthTech</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">AI clinical decision support tool that surfaces evidence-based answers for physicians.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $75M</span>
+    <span class="date">📅 2024-10-01</span>
+    <a class='web-link' href='https://openevidence.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="B2B SaaS" data-stage="Series E" data-amt="260000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Glean</h2>
+      <span class="ind-tag">B2B SaaS</span>
+    </div>
+    <span class="stage-badge" style="background:#8b949e22;color:#8b949e;border-color:#8b949e44">Series E</span>
+  </div>
+  <p class="summary">Work AI platform that searches across all company apps and answers questions.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $260M</span>
+    <span class="date">📅 2024-09-12</span>
+    <a class='web-link' href='https://glean.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="DevTools" data-stage="Series B" data-amt="67000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Modal</h2>
+      <span class="ind-tag">DevTools</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">Serverless cloud for running Python ML workloads with zero infrastructure config.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $67M</span>
+    <span class="date">📅 2024-09-11</span>
+    <a class='web-link' href='https://modal.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series B" data-amt="150000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">phData</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">Data and AI services firm backed by Anthropic and others. Helps enterprises adopt AI with Snowflake, Databricks, and Claude-powered solution</p>
+  <div class="card-foot">
+    <span class="amt">💰 $150M</span>
+    <span class="date">📅 2024-09-10</span>
+    <a class='web-link' href='https://phdata.io' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="DevTools" data-stage="Series C" data-amt="150000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Codeium (Windsurf)</h2>
+      <span class="ind-tag">DevTools</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">AI coding assistant and Windsurf IDE with deep repo-level context.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $150M</span>
+    <span class="date">📅 2024-08-29</span>
+    <a class='web-link' href='https://codeium.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series C" data-amt="320000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Lambda</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">GPU cloud and workstations purpose-built for AI training and inference.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $320M</span>
+    <span class="date">📅 2024-08-20</span>
+    <a class='web-link' href='https://lambdalabs.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series B" data-amt="80000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Ideogram</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">AI image generation with industry-leading text rendering inside images.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $80M</span>
+    <span class="date">📅 2024-08-20</span>
+    <a class='web-link' href='https://ideogram.ai' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="Fintech" data-stage="Series D" data-amt="300000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Ramp</h2>
+      <span class="ind-tag">Fintech</span>
+    </div>
+    <span class="stage-badge" style="background:#8b949e22;color:#8b949e;border-color:#8b949e44">Series D</span>
+  </div>
+  <p class="summary">AI-powered corporate card and spend management platform for finance teams.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $300M</span>
+    <span class="date">📅 2024-08-12</span>
+    <a class='web-link' href='https://ramp.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series B" data-amt="500000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Poolside</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">AI coding model company building foundation models trained purely on code.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $500M</span>
+    <span class="date">📅 2024-08-08</span>
+    <a class='web-link' href='https://poolside.ai' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series A" data-amt="214000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Sakana AI</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#58a6ff22;color:#58a6ff;border-color:#58a6ff44">Series A</span>
+  </div>
+  <p class="summary">Tokyo-based AI lab applying nature-inspired intelligence to model design.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $214M</span>
+    <span class="date">📅 2024-08-07</span>
+    <a class='web-link' href='https://sakana.ai' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="DevTools" data-stage="Series A" data-amt="12000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Inngest</h2>
+      <span class="ind-tag">DevTools</span>
+    </div>
+    <span class="stage-badge" style="background:#58a6ff22;color:#58a6ff;border-color:#58a6ff44">Series A</span>
+  </div>
+  <p class="summary">Durable workflow engine for background jobs, queues, and event-driven functions.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $12M</span>
+    <span class="date">📅 2024-08-06</span>
+    <a class='web-link' href='https://inngest.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series D" data-amt="640000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Groq</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#8b949e22;color:#8b949e;border-color:#8b949e44">Series D</span>
+  </div>
+  <p class="summary">LPU inference hardware delivering ultra-fast token generation for LLMs.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $640M</span>
+    <span class="date">📅 2024-08-05</span>
+    <a class='web-link' href='https://groq.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="HealthTech" data-stage="Series B" data-amt="141000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Hippocratic AI</h2>
+      <span class="ind-tag">HealthTech</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">Safety-focused AI health agents for patient communication and care navigation.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $141M</span>
+    <span class="date">📅 2024-07-23</span>
+    <a class='web-link' href='https://hippocratic.ai' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series D" data-amt="500000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Cohere</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#8b949e22;color:#8b949e;border-color:#8b949e44">Series D</span>
+  </div>
+  <p class="summary">Enterprise AI platform for search, retrieval and text generation at scale.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $500M</span>
+    <span class="date">📅 2024-07-22</span>
+    <a class='web-link' href='https://cohere.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="Fintech" data-stage="Series C" data-amt="300000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Mercury</h2>
+      <span class="ind-tag">Fintech</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">Banking stack for startups including accounts, cards, treasury and venture debt.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $300M</span>
+    <span class="date">📅 2024-07-16</span>
+    <a class='web-link' href='https://mercury.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="DevTools" data-stage="Series A" data-amt="10000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Fern</h2>
+      <span class="ind-tag">DevTools</span>
+    </div>
+    <span class="stage-badge" style="background:#58a6ff22;color:#58a6ff;border-color:#58a6ff44">Series A</span>
+  </div>
+  <p class="summary">SDK and API docs generator — auto-generates typed SDKs from OpenAPI specs.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $10M</span>
+    <span class="date">📅 2024-07-09</span>
+    <a class='web-link' href='https://buildwithfern.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series B" data-amt="250000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Perplexity AI</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">AI-native search engine delivering cited, real-time answers.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $250M</span>
+    <span class="date">📅 2024-06-20</span>
+    <a class='web-link' href='https://perplexity.ai' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="Security" data-stage="Seed" data-amt="4000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Haize Labs</h2>
+      <span class="ind-tag">Security</span>
+    </div>
+    <span class="stage-badge" style="background:#3fb95022;color:#3fb950;border-color:#3fb95044">Seed</span>
+  </div>
+  <p class="summary">AI red-teaming startup that automatically finds safety failures in LLMs.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $4M</span>
+    <span class="date">📅 2024-06-20</span>
+    <a class='web-link' href='https://haizelabs.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="HR Tech" data-stage="Series A" data-amt="30000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Mercor</h2>
+      <span class="ind-tag">HR Tech</span>
+    </div>
+    <span class="stage-badge" style="background:#58a6ff22;color:#58a6ff;border-color:#58a6ff44">Series A</span>
+  </div>
+  <p class="summary">AI hiring platform that screens, interviews and ranks candidates automatically.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $30M</span>
+    <span class="date">📅 2024-06-18</span>
+    <a class='web-link' href='https://mercor.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series C" data-amt="43000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Luma AI</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">3D capture and AI video generation platform behind Dream Machine.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $43M</span>
+    <span class="date">📅 2024-06-12</span>
+    <a class='web-link' href='https://lumalabs.ai' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series B" data-amt="640000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Mistral AI</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">European AI lab producing efficient open-weight and commercial LLMs.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $640M</span>
+    <span class="date">📅 2024-06-11</span>
+    <a class='web-link' href='https://mistral.ai' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="DevTools" data-stage="Series C" data-amt="75000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Baseten</h2>
+      <span class="ind-tag">DevTools</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">High-performance ML model inference infrastructure for production workloads.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $75M</span>
+    <span class="date">📅 2024-06-04</span>
+    <a class='web-link' href='https://baseten.co' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series B" data-amt="6000000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">xAI</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">Elon Musk's AI company building the Grok LLM and AI infrastructure.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $6.0B</span>
+    <span class="date">📅 2024-05-26</span>
+    <a class='web-link' href='https://x.ai' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="Fintech" data-stage="Series E" data-amt="235000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Brex</h2>
+      <span class="ind-tag">Fintech</span>
+    </div>
+    <span class="stage-badge" style="background:#8b949e22;color:#8b949e;border-color:#8b949e44">Series E</span>
+  </div>
+  <p class="summary">AI-powered spend management and corporate cards for startups and enterprises.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $235M</span>
+    <span class="date">📅 2024-05-23</span>
+    <a class='web-link' href='https://brex.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="Security" data-stage="Series D" data-amt="250000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Abnormal Security</h2>
+      <span class="ind-tag">Security</span>
+    </div>
+    <span class="stage-badge" style="background:#8b949e22;color:#8b949e;border-color:#8b949e44">Series D</span>
+  </div>
+  <p class="summary">AI-native email security platform stopping socially-engineered attacks.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $250M</span>
+    <span class="date">📅 2024-05-15</span>
+    <a class='web-link' href='https://abnormalsecurity.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="DevTools" data-stage="Series A" data-amt="15000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Depot</h2>
+      <span class="ind-tag">DevTools</span>
+    </div>
+    <span class="stage-badge" style="background:#58a6ff22;color:#58a6ff;border-color:#58a6ff44">Series A</span>
+  </div>
+  <p class="summary">Remote Docker build acceleration — 40x faster CI builds with persistent caching.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $15M</span>
+    <span class="date">📅 2024-05-14</span>
+    <a class='web-link' href='https://depot.dev' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="Security" data-stage="Series E" data-amt="1000000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Wiz</h2>
+      <span class="ind-tag">Security</span>
+    </div>
+    <span class="stage-badge" style="background:#8b949e22;color:#8b949e;border-color:#8b949e44">Series E</span>
+  </div>
+  <p class="summary">Cloud security platform that maps and remediates risks across AWS, Azure and GCP.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $1.0B</span>
+    <span class="date">📅 2024-05-07</span>
+    <a class='web-link' href='https://wiz.io' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="B2B SaaS" data-stage="Growth" data-amt="200000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Rippling</h2>
+      <span class="ind-tag">B2B SaaS</span>
+    </div>
+    <span class="stage-badge" style="background:#f7816622;color:#f78166;border-color:#f7816644">Growth</span>
+  </div>
+  <p class="summary">Unified HR, IT and Finance platform for managing the entire employee lifecycle.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $200M</span>
+    <span class="date">📅 2024-04-22</span>
+    <a class='web-link' href='https://rippling.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="EdTech" data-stage="Series B" data-amt="23000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Synthesis</h2>
+      <span class="ind-tag">EdTech</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">AI math tutor for kids that adapts to each child's pace and learning style.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $23M</span>
+    <span class="date">📅 2024-04-10</span>
+    <a class='web-link' href='https://synthesis.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="CleanTech" data-stage="Series C" data-amt="95000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Terabase Energy</h2>
+      <span class="ind-tag">CleanTech</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">Software and robotics platform automating utility-scale solar farm construction.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $95M</span>
+    <span class="date">📅 2024-03-20</span>
+    <a class='web-link' href='https://terabase.energy' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series B" data-amt="106000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Together AI</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">Cloud platform for training and running open-source AI models cheaply.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $106M</span>
+    <span class="date">📅 2024-03-13</span>
+    <a class='web-link' href='https://together.ai' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="Fintech" data-stage="Growth" data-amt="694000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Stripe</h2>
+      <span class="ind-tag">Fintech</span>
+    </div>
+    <span class="stage-badge" style="background:#f7816622;color:#f78166;border-color:#f7816644">Growth</span>
+  </div>
+  <p class="summary">Global payments infrastructure powering millions of internet businesses.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $694M</span>
+    <span class="date">📅 2024-02-29</span>
+    <a class='web-link' href='https://stripe.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="HR Tech" data-stage="Series C" data-amt="30000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Ashby</h2>
+      <span class="ind-tag">HR Tech</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">All-in-one recruiting platform with ATS, scheduling and analytics built-in.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $30M</span>
+    <span class="date">📅 2024-02-22</span>
+    <a class='web-link' href='https://ashbyhq.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series B" data-amt="80000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Pika Labs</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">AI video generation platform turning ideas into cinematic video clips.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $80M</span>
+    <span class="date">📅 2024-02-08</span>
+    <a class='web-link' href='https://pika.art' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="B2B SaaS" data-stage="Series B" data-amt="40000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Clay</h2>
+      <span class="ind-tag">B2B SaaS</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">AI-powered sales prospecting platform enriching leads from 75+ data sources.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $40M</span>
+    <span class="date">📅 2024-02-07</span>
+    <a class='web-link' href='https://clay.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="Security" data-stage="Series C" data-amt="150000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Vanta</h2>
+      <span class="ind-tag">Security</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">Trust management platform automating security reviews and compliance certifications.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $150M</span>
+    <span class="date">📅 2024-01-31</span>
+    <a class='web-link' href='https://vanta.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="DevTools" data-stage="Series A" data-amt="27000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Zed Industries</h2>
+      <span class="ind-tag">DevTools</span>
+    </div>
+    <span class="stage-badge" style="background:#58a6ff22;color:#58a6ff;border-color:#58a6ff44">Series A</span>
+  </div>
+  <p class="summary">High-performance Rust-based code editor with real-time collaboration built-in.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $27M</span>
+    <span class="date">📅 2024-01-24</span>
+    <a class='web-link' href='https://zed.dev' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series C" data-amt="180000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">ElevenLabs</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">AI voice synthesis platform with ultra-realistic cloning in 29 languages.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $180M</span>
+    <span class="date">📅 2024-01-22</span>
+    <a class='web-link' href='https://elevenlabs.io' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series C" data-amt="141000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Runway</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">Creative AI company behind Gen-2 and Gen-3 video generation models.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $141M</span>
+    <span class="date">📅 2023-12-05</span>
+    <a class='web-link' href='https://runwayml.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="Security" data-stage="Series C" data-amt="200000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Drata</h2>
+      <span class="ind-tag">Security</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">Automated compliance platform for SOC 2, ISO 27001, HIPAA and GDPR.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $200M</span>
+    <span class="date">📅 2023-11-15</span>
+    <a class='web-link' href='https://drata.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="B2B SaaS" data-stage="Series B" data-amt="12000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Gamma</h2>
+      <span class="ind-tag">B2B SaaS</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">AI presentation and document builder replacing PowerPoint for modern teams.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $12M</span>
+    <span class="date">📅 2023-11-01</span>
+    <a class='web-link' href='https://gamma.app' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="HealthTech" data-stage="Series B" data-amt="30000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Turquoise Health</h2>
+      <span class="ind-tag">HealthTech</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">Healthcare price transparency platform normalizing hospital pricing data.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $30M</span>
+    <span class="date">📅 2023-10-24</span>
+    <a class='web-link' href='https://turquoise.health' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="AI/ML" data-stage="Series B" data-amt="200000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Imbue</h2>
+      <span class="ind-tag">AI/ML</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">AI research lab focused on building practical AI agents that reason and code.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $200M</span>
+    <span class="date">📅 2023-09-12</span>
+    <a class='web-link' href='https://imbue.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="CleanTech" data-stage="Series E" data-amt="450000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Form Energy</h2>
+      <span class="ind-tag">CleanTech</span>
+    </div>
+    <span class="stage-badge" style="background:#8b949e22;color:#8b949e;border-color:#8b949e44">Series E</span>
+  </div>
+  <p class="summary">Iron-air multi-day energy storage for grid-scale renewable backup.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $450M</span>
+    <span class="date">📅 2023-08-01</span>
+    <a class='web-link' href='https://formenergy.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="DevTools" data-stage="Series B" data-amt="23000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Warp</h2>
+      <span class="ind-tag">DevTools</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">Rust-based terminal with AI command search and collaborative workflows.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $23M</span>
+    <span class="date">📅 2023-04-05</span>
+    <a class='web-link' href='https://warp.dev' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="EdTech" data-stage="Series A" data-amt="0">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Khan Academy (Khanmigo)</h2>
+      <span class="ind-tag">EdTech</span>
+    </div>
+    <span class="stage-badge" style="background:#58a6ff22;color:#58a6ff;border-color:#58a6ff44">Series A</span>
+  </div>
+  <p class="summary">AI tutoring assistant embedded into Khan Academy's free education platform.</p>
+  <div class="card-foot">
+    <span class="amt">💰 Undisclosed</span>
+    <span class="date">📅 2023-03-14</span>
+    <a class='web-link' href='https://khanacademy.org' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="E-commerce" data-stage="Series C" data-amt="65000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Loop Returns</h2>
+      <span class="ind-tag">E-commerce</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">Returns management platform for Shopify brands reducing refund rates.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $65M</span>
+    <span class="date">📅 2022-11-16</span>
+    <a class='web-link' href='https://loopreturns.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="B2B SaaS" data-stage="Series B" data-amt="35000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Linear</h2>
+      <span class="ind-tag">B2B SaaS</span>
+    </div>
+    <span class="stage-badge" style="background:#bc8cff22;color:#bc8cff;border-color:#bc8cff44">Series B</span>
+  </div>
+  <p class="summary">Fast, opinionated issue tracker built for high-velocity software teams.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $35M</span>
+    <span class="date">📅 2022-09-14</span>
+    <a class='web-link' href='https://linear.app' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="E-commerce" data-stage="Series E" data-amt="935000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Flexport</h2>
+      <span class="ind-tag">E-commerce</span>
+    </div>
+    <span class="stage-badge" style="background:#8b949e22;color:#8b949e;border-color:#8b949e44">Series E</span>
+  </div>
+  <p class="summary">Digital freight forwarder and supply chain visibility platform.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $935M</span>
+    <span class="date">📅 2022-02-10</span>
+    <a class='web-link' href='https://flexport.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="B2B SaaS" data-stage="Series C" data-amt="275000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Notion</h2>
+      <span class="ind-tag">B2B SaaS</span>
+    </div>
+    <span class="stage-badge" style="background:#d2992222;color:#d29922;border-color:#d2992244">Series C</span>
+  </div>
+  <p class="summary">All-in-one workspace for notes, wikis, databases and project management.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $275M</span>
+    <span class="date">📅 2021-10-08</span>
+    <a class='web-link' href='https://notion.so' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article>
+<article class="card" data-ind="Fintech" data-stage="Series D" data-amt="425000000">
+  <div class="card-top">
+    <div>
+      <h2 class="co-name">Plaid</h2>
+      <span class="ind-tag">Fintech</span>
+    </div>
+    <span class="stage-badge" style="background:#8b949e22;color:#8b949e;border-color:#8b949e44">Series D</span>
+  </div>
+  <p class="summary">Open banking API connecting financial apps to users' bank accounts.</p>
+  <div class="card-foot">
+    <span class="amt">💰 $425M</span>
+    <span class="date">📅 2021-04-07</span>
+    <a class='web-link' href='https://plaid.com' target='_blank' rel='noopener'>Visit →</a>
+  </div>
+</article></div>
+<div class="none" id="none">No results. <a href="#" onclick="clearAll();return false">Clear filters</a></div>
+<footer><a href="https://rapidapi.com/PradeepKumarKesharwani/api/fundradar" target="_blank">API on RapidAPI</a> · <a href="https://github.com/nxtcraft/fundradar" target="_blank">GitHub</a> · Updated daily</footer>
+<script>
+let aInd=null,aStage=null;
+function fil(){
+  const q=document.getElementById('search').value.toLowerCase();
+  const minA=parseInt(document.getElementById('amt-sel').value)||0;
+  let n=0;
+  document.querySelectorAll('.card').forEach(c=>{
+    const ok=(!q||c.innerText.toLowerCase().includes(q))&&
+              (parseInt(c.dataset.amt)>=minA)&&
+              (!aInd||c.dataset.ind===aInd)&&
+              (!aStage||c.dataset.stage===aStage);
+    c.classList.toggle('hidden',!ok);
+    if(ok)n++;
+  });
+  document.getElementById('count').textContent=n+' companies shown';
+  document.getElementById('none').classList.toggle('show',n===0);
+  document.getElementById('clear-btn').style.display=(q||minA||aInd||aStage)?'inline-block':'none';
+}
+function filterInd(v){aInd=aInd===v?null:v;document.querySelectorAll('.f-btn').forEach(b=>b.classList.toggle('active',b.textContent===v&&aInd));fil();}
+function filterStage(v){aStage=aStage===v?null:v;document.querySelectorAll('.f-btn').forEach(b=>b.classList.toggle('active',b.textContent===v&&aStage));fil();}
+function clearAll(){aInd=null;aStage=null;document.getElementById('search').value='';document.getElementById('amt-sel').value='0';document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('active'));fil();}
+</script>
+</body></html>
